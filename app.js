@@ -6,6 +6,8 @@ var logger = require('morgan');
 var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter=require('./routes/login_routes');
+var signupRouter=require('./routes/signup_routes');
 var productRouter = require('./routes/product_routes');
 var categoryRouter = require('./routes/category_routes');
 var colorRouter =require('./routes/color_routes');
@@ -13,6 +15,7 @@ var employeeRouter = require('./routes/employee_routes');
 var stockRouter = require('./routes/stock_routes');
 var supplierRouter =  require('./routes/supplier_routes');
 var slotRouter = require ('./routes/slot_routes');
+var userRouter=require('./routes/user_routes');
 
 var app = express();
 
@@ -28,8 +31,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/login',loginRouter);
+app.use('/signup',signupRouter);
+app.use('/user',userRouter);
 app.use('/product',productRouter);
-app.use('/category',categoryRouter);
+app.use('/nav/category',categoryRouter);
 app.use('/color',colorRouter);
 app.use('/employee', employeeRouter);
 app.use('/stock',stockRouter);
