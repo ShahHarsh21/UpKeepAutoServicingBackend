@@ -52,6 +52,7 @@ router.get('/:product_id',function(req,res,next){
      });
  });
  router.put('/:product_id',function(req,res,next){
+     console.log(req.params.product_id);
      product.updateProduct(req.params.product_id,req.body,function(err,rows){
          if(err){
              res.json(err);

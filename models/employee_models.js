@@ -12,7 +12,7 @@ var employee={
     {
          return db.query('insert into employee_tbl values(?,?,?,?,?,?)',[item.employee_id,item.employee_img,item.employee_designation,item.salary,item.employee_type,item.fk_user_id],callback);
     },
-    deleteemployee:function(employee_id,callback)
+    deleteEmployee:function(employee_id,callback)
     {
         return db.query('delete from employee_tbl where employee_id=?',[employee_id],callback);
     },

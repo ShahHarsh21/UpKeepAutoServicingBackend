@@ -27,30 +27,30 @@ router.get('/:category_id',function(req,res,next){
     });
 });
 
-//  router.post('/',function(req,res,next){
-//      user.AddUser(req.body,function(err,rows){                   //Insert
-//          if(err)
-//          {
-//              res.json(err);
-//          }
-//          if(rows)
-//          {
-//              res.json(rows);    
-//          }
-//      });
-//  });
-//  router.delete('/:Registration_id',function(req,res,next){
-//      user.deleteUser(req.params.Registration_id,function(err,rows){
-//          if(err)
-//          {
-//              res.json(err);
-//          }
-//          if(rows)
-//          {
-//              res.json(rows);
-//          }
-//      });
-//  });
+ router.post('/',function(req,res,next){
+     category.AddCategory(req.body,function(err,rows){                   //Insert
+         if(err)
+         {
+             res.json(err);
+         }
+         if(rows)
+         {
+             res.json(rows);    
+         }
+     });
+ });
+ router.delete('/:category_id',function(req,res,next){
+     user.deleteCategory(req.params.category_id,function(err,rows){
+         if(err)
+         {
+             res.json(err);
+         }
+         if(rows)
+         {
+             res.json(rows);
+         }
+     });
+ });
  router.put('/:category_id',function(req,res,next){
      category.updateCategory(req.params.category_id,req.body,function(err,rows){
          if(err){

@@ -19,7 +19,7 @@ var userRouter=require('./routes/user_routes');
 
 var app = express();
 
-// view engine setup
+// npview engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(cors());

@@ -16,7 +16,7 @@ var path=require('path');
     });
 });
 router.get('/:user_id',function(req,res,next){
-    user.getUserById(req.params.product_id,function(err,rows){
+    user.getUserById(req.params.user_id,function(err,rows){
         if(err)
         {
             res.json(err);
@@ -41,7 +41,7 @@ router.get('/:user_id',function(req,res,next){
      });
  });
  router.delete('/:user_id',function(req,res,next){
-     user.deleteUser(req.params.product_id,function(err,rows){
+     user.deleteUser(req.params.user_id,function(err,rows){
          if(err)
          {
              res.json(err);
@@ -53,7 +53,7 @@ router.get('/:user_id',function(req,res,next){
      });
  });
  router.put('/:user_id',function(req,res,next){
-     user.updateUser(req.params.product_id,req.body,function(err,rows){
+     user.updateUser(req.params.user_id,req.body,function(err,rows){
          if(err){
              res.json(err);
          }
