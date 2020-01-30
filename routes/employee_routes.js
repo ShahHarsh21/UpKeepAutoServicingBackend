@@ -14,6 +14,18 @@ var path=require('path');
         }
     });
 });
+router.get('/',function(req,res,next){
+    employee.getAllEmployeeWithUserName(function(err,rows){
+        if(err)
+        {
+            res.json(err);
+        }
+        if(rows)
+        {
+            res.json(rows);
+        }
+    });
+});
 router.get('/:employee_id',function(req,res,next){
     employee.getEmployeeById(req.params.employee_id,function(err,rows){
         if(err)
@@ -26,7 +38,6 @@ router.get('/:employee_id',function(req,res,next){
         }
     });
 });
-
  router.post('/',function(req,res,next){
     employee.AddEmployee(req.body,function(err,rows){                   //Insert
          if(err)

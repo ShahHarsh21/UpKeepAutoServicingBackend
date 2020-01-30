@@ -29,7 +29,8 @@ router.get('/:slot_register_id',function(req,res,next){
 });
 
  router.post('/',function(req,res,next){
-     slot.AddSlot(req.body,function(err,rows){                   //Insert
+     slot.AddSlot(req.body,function(err,rows){                 
+        // console.log(req.body);
          if(err)
          {
              res.json(err);

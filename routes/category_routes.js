@@ -40,7 +40,8 @@ router.get('/:category_id',function(req,res,next){
      });
  });
  router.delete('/:category_id',function(req,res,next){
-     user.deleteCategory(req.params.category_id,function(err,rows){
+    console.log(req.params.category_id);
+    category.deleteCategory(req.params.category_id,function(err,rows){
          if(err)
          {
              res.json(err);
