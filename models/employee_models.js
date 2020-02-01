@@ -14,7 +14,7 @@ var employee={
     },
     getAllType(fk_user_id,callback)
     {
-        return db.query('select u.user_type from user_tbl u,employee_tbl e ',[fk_user_id],callback);
+        return db.query('select u.user_type from user_tbl u,employee_tbl e where u.user_id=e.fk_user_id',[fk_user_id],callback);
     },
     getAllDesignation(employee_id,callback)
     {
@@ -22,7 +22,7 @@ var employee={
     },
     AddEmployee:function(item,callback)
     {
-         return db.query('insert into employee_tbl (employee_img,employee_designation,salary,fk_user_id) values(?,?,?,?)',[item.employee_img,item.employee_designation,item.salary,item.fk_user_id],callback);
+        return db.query('insert into employee_tbl (fk_user_id) values(?)',[item.fk_user_id],callback);
     },
     deleteEmployee:function(employee_id,callback)
     {
