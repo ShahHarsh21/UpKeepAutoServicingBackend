@@ -14,6 +14,7 @@ var supplier={
     },
     deleteSupplier:function(supplier_id,callback)
     {
+        console.log(supplier_id);
         return db.query('delete from supplier_tbl where supplier_id=?',[supplier_id],callback);
     },
     updateSupplier:function(supplier_id,item,callback)

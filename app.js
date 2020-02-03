@@ -16,9 +16,11 @@ var emp_With_UsernameRouter=require('./routes/emp_with_username');
 var emp_designation_Router=require('./routes/employee_designation_routs');
 var emp_type_Router=require('./routes/emp_type_routs');
 var stockRouter = require('./routes/stock_routes');
+var cartRouter = require('./routes/cart_routes');
 var supplierRouter =  require('./routes/supplier_routes');
 var slotRouter = require ('./routes/slot_routes');
 var userRouter=require('./routes/user_routes');
+var order_detailsRouter= require('./routes/order_details_routes');
 
 var app = express();
 
@@ -36,8 +38,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login',loginRouter);
 app.use('/signup',signupRouter);
+app.use('/cart',cartRouter);
 app.use('/user',userRouter);
 app.use('/product',productRouter);
+app.use('/order_details',order_detailsRouter);
 app.use('/nav/category',categoryRouter);
 app.use('/color',colorRouter);
 app.use('/employee', employeeRouter);

@@ -1,10 +1,9 @@
 var express=require('express');
 var router=express.Router(); // Router has only one which have all the function
-var product=require('../models/product_models'); //Name of the model
+var order_details=require('../models/order_details_models'); //Name of the model
 var path=require('path');
-   
-  router.get('/',function(req,res,next){
-    product.getAllProduct(function(err,rows){
+    router.get('/',function(req,res,next){
+    order_details.getAllOrder_Details(function(err,rows){
         if(err)
         {
             res.json(err);
@@ -15,8 +14,8 @@ var path=require('path');
         }
     });
 });
-router.get('/:product_id',function(req,res,next){
-    product.getProductById(req.params.product_id,function(err,rows){
+router.get('/:order_details_id',function(req,res,next){
+    order_details.getOrder_DetailsById(req.params.order_details_id,function(err,rows){
         if(err)
         {
             res.json(err);
@@ -29,7 +28,7 @@ router.get('/:product_id',function(req,res,next){
 });
 
  router.post('/',function(req,res,next){
-     product.AddProduct(req.body,function(err,rows){                   //Insert
+    order_details.AddOrder_Details(req.body,function(err,rows){                   //Insert
          if(err)
          {
              res.json(err);
@@ -40,8 +39,8 @@ router.get('/:product_id',function(req,res,next){
          }
      });
  });
- router.delete('/:product_id',function(req,res,next){
-     product.deleteProduct(req.params.product_id,function(err,rows){
+ router.delete('/:order_details_id',function(req,res,next){
+    order_details.deleteOrder_Details(req.params.order_details_id,function(err,rows){
          if(err)
          {
              res.json(err);
@@ -52,9 +51,8 @@ router.get('/:product_id',function(req,res,next){
          }
      });
  });
- router.put('/:product_id',function(req,res,next){
-     console.log(req.params.product_id);
-     product.updateProduct(req.params.product_id,req.body,function(err,rows){
+ router.put('/:order_details_id',function(req,res,next){
+    order_details.updateOrder_Details(req.params.order_details_id,req.body,function(err,rows){
          if(err){
              res.json(err);
          }

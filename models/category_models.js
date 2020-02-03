@@ -10,7 +10,7 @@ var category={
     },
      AddCategory:function(item,callback)
      {
-         return db.query('insert into category_tbl (category_name) values (?)',[item.category_name],callback);
+         return db.query('insert into category_tbl  values (?,?)',[item.category_id,item.category_name],callback);
     },
     deleteCategory:function(category_id,callback)
     {
