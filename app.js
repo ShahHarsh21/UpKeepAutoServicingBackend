@@ -51,6 +51,7 @@ app.use('/emp_type',emp_type_Router)
 app.use('/stock',stockRouter);
 app.use('/supplier',supplierRouter);
 app.use('/slot',slotRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

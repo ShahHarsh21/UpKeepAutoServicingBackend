@@ -4,7 +4,8 @@ var product={
     {
         return db.query('select * from product_tbl',callback);
     },
-    getProductById:function(product_id,callback){
+    getProductById:function(product_id,callback)
+    {
          return db.query('select * from product_tbl where product_id=?',[product_id],callback);
      },
     AddProduct:function(item,callback)
