@@ -63,6 +63,7 @@ router.get('/:employee_id',function(req,res,next){
      });
  });
  router.put('/:employee_id',function(req,res,next){
+    console.log(req.body);
     employee.updateEmployee(req.params.employee_id,req.body,function(err,rows){
          if(err){
              res.json(err);

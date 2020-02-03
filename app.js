@@ -38,7 +38,7 @@ app.use('/login',loginRouter);
 app.use('/signup',signupRouter);
 app.use('/user',userRouter);
 app.use('/product',productRouter);
-app.use('/nav/category',categoryRouter);
+app.use('/category',categoryRouter);
 app.use('/color',colorRouter);
 app.use('/employee', employeeRouter);
 app.use('/emp_With_Username',emp_With_UsernameRouter);
@@ -47,6 +47,7 @@ app.use('/emp_type',emp_type_Router)
 app.use('/stock',stockRouter);
 app.use('/supplier',supplierRouter);
 app.use('/slot',slotRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
