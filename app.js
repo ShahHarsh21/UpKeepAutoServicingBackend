@@ -21,7 +21,7 @@ var supplierRouter =  require('./routes/supplier_routes');
 var slotRouter = require ('./routes/slot_routes');
 var userRouter=require('./routes/user_routes');
 var order_detailsRouter= require('./routes/order_details_routes');
-
+var emailRouter = require('./routes/email_routes');
 var app = express();
 
 // npview engine setup
@@ -42,8 +42,9 @@ app.use('/cart',cartRouter);
 app.use('/user',userRouter);
 app.use('/product',productRouter);
 app.use('/order_details',order_detailsRouter);
-app.use('/nav/category',categoryRouter);
+app.use('/category',categoryRouter);
 app.use('/color',colorRouter);
+app.use('/email',emailRouter);
 app.use('/employee', employeeRouter);
 app.use('/emp_With_Username',emp_With_UsernameRouter);
 app.use('/emp_designation',emp_designation_Router);
