@@ -25,6 +25,7 @@ var order_detailsRouter= require('./routes/order_details_routes');
 var machanicRouter=require('./routes/emp_with_machanic_routs');
 var slotByDate=require('./routes/slotByDate_routes');
 
+var emailRouter = require('./routes/email_routes');
 var app = express();
 
 // npview engine setup
@@ -47,6 +48,7 @@ app.use('/product',productRouter);
 app.use('/order_details',order_detailsRouter);
 app.use('/category',categoryRouter);
 app.use('/color',colorRouter);
+app.use('/email',emailRouter);
 app.use('/employee', employeeRouter);
 app.use('/emp_With_Username',emp_With_UsernameRouter);
 app.use('/emp_designation',emp_designation_Router);

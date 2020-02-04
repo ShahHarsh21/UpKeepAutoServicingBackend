@@ -6,6 +6,7 @@ var category={
     },
     getCategoryById:function(category_id,callback)
     {
+        console.log(category_id)
         return db.query('select * from category_tbl where category_id=?',[category_id],callback);
     },
      AddCategory:function(item,callback)
