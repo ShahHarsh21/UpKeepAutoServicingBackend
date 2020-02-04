@@ -8,6 +8,22 @@ var slot={
     {
          return db.query('select * from slot_tbl where slot_register_id=?',[slot_registered_id],callback);
     },
+    getAllSlotByToday:function(callback)
+    {
+        var today_year  = new Date().getFullYear();
+        var today_month  = new Date().getMonth()+1;
+        var today_date  = new Date().getDate();
+        if(today_date<10){
+            var today=today_year+"-"+"0"+today_month+"-"+"0"+today_date;
+        }
+        else{
+            var today=today_year+"-"+today_month+"-"+today_date;
+        }
+        
+        //var today=new Date();
+        console.log(today);
+         return db.query('select * from slot_tbl where pickup_date=? ',[today],callback);
+    },
     AddSlot:function(item,callback)
     {
          return db.query('insert into slot_tbl (vehicle_type,vehicle_model,service_type,time_period,pickup_date,pickup_address,requirment,drop_address) values(?,?,?,?,?,?,?,?)',[item.vehicle_type,item.vehicle_model,item.service_type,item.time_period,item.pickup_time,item.pickup_address,item.requirment,item.drop_address],callback);

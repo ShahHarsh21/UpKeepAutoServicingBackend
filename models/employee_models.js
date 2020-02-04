@@ -12,6 +12,14 @@ var employee={
     {
          return db.query('select u.*,e.* from user_tbl u,employee_tbl e where e.employee_id=? and u.user_id=e.fk_user_id',[employee_id],callback);
     },
+    getAllEmpWithDeliveryBoy(callback)
+    {
+        return db.query('select * from employee_tbl where employee_designation="Delivery Boy"',callback);
+    },
+    getAllEmpWithMachanic(callback)
+    {
+        return db.query('select * from employee_tbl where employee_designation="Machanic"',callback);
+    },
     getAllType(fk_user_id,callback)
     {
         return db.query('select u.user_type from user_tbl u,employee_tbl e where u.user_id=e.fk_user_id',[fk_user_id],callback);

@@ -20,7 +20,10 @@ var cartRouter = require('./routes/cart_routes');
 var supplierRouter =  require('./routes/supplier_routes');
 var slotRouter = require ('./routes/slot_routes');
 var userRouter=require('./routes/user_routes');
+var deliveryboyRouter = require('./routes/emp_delivery_boy_routs');
 var order_detailsRouter= require('./routes/order_details_routes');
+var machanicRouter=require('./routes/emp_with_machanic_routs');
+var slotByDate=require('./routes/slotByDate_routes');
 
 var app = express();
 
@@ -42,7 +45,7 @@ app.use('/cart',cartRouter);
 app.use('/user',userRouter);
 app.use('/product',productRouter);
 app.use('/order_details',order_detailsRouter);
-app.use('/nav/category',categoryRouter);
+app.use('/category',categoryRouter);
 app.use('/color',colorRouter);
 app.use('/employee', employeeRouter);
 app.use('/emp_With_Username',emp_With_UsernameRouter);
@@ -51,7 +54,9 @@ app.use('/emp_type',emp_type_Router)
 app.use('/stock',stockRouter);
 app.use('/supplier',supplierRouter);
 app.use('/slot',slotRouter);
-
+app.use('/deliveryBoy',deliveryboyRouter);
+app.use('/machanic',machanicRouter);
+app.use('/slotByDate',slotByDate)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
