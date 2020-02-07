@@ -25,8 +25,11 @@ var order_detailsRouter= require('./routes/order_details_routes');
 var machanicRouter=require('./routes/emp_with_machanic_routs');
 var slotByDate=require('./routes/slotByDate_routes');
 var emailRouter = require('./routes/email_routes');
+<<<<<<< HEAD
 var emp_photo=require('./routes/emp_photo_routs');
 var emp_allotmentRouter=require('./routes/employee_allotement_routs');
+=======
+>>>>>>> 5aa6a25630d7c29674320ff46a7177ca1ce5fd0f
 
 var app = express();
 
