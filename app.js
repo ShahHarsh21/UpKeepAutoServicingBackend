@@ -26,6 +26,7 @@ var machanicRouter=require('./routes/emp_with_machanic_routs');
 var slotByDate=require('./routes/slotByDate_routes');
 
 var emailRouter = require('./routes/email_routes');
+
 var app = express();
 
 // npview engine setup

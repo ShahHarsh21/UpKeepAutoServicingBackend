@@ -10,16 +10,12 @@ var demo = {
          ssl: true,
          port: 465
       });
-
-
-      server.send({
+    server.send({
          text: demo.message,
          from: 'upkeepautoservicing@gmail.com',
          to: demo.name,
          subject: demo.subject
       }, callback);
    }
-
-
 }
 module.exports = demo;
