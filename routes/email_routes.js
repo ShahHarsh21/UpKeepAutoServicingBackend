@@ -4,10 +4,10 @@ var email = require("../models/email");
 router.post('/',function(req,res,next){
 
     email.sendMail(req.body,function(err,message){
-
+        console.log(req.body);
         if(err)
         {
-            console.log(err);
+            // console.log(err);
             res.json(err);
             
         }

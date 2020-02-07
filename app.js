@@ -24,8 +24,10 @@ var deliveryboyRouter = require('./routes/emp_delivery_boy_routs');
 var order_detailsRouter= require('./routes/order_details_routes');
 var machanicRouter=require('./routes/emp_with_machanic_routs');
 var slotByDate=require('./routes/slotByDate_routes');
-
 var emailRouter = require('./routes/email_routes');
+var emp_photo=require('./routes/emp_photo_routs');
+var emp_allotmentRouter=require('./routes/employee_allotement_routs');
+
 var app = express();
 
 // npview engine setup
@@ -58,7 +60,9 @@ app.use('/supplier',supplierRouter);
 app.use('/slot',slotRouter);
 app.use('/deliveryBoy',deliveryboyRouter);
 app.use('/machanic',machanicRouter);
-app.use('/slotByDate',slotByDate)
+app.use('/slotByDate',slotByDate);
+app.use('/EmpImg',emp_photo);
+app.use('/EmpAllotment',emp_allotmentRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

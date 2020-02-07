@@ -15,7 +15,7 @@ var demo = {
       server.send({
          text: demo.message,
          from: 'upkeepautoservicing@gmail.com',
-         to: demo.name,
+         to: demo.To,
          subject: demo.subject
       }, callback);
    }

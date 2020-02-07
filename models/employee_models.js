@@ -18,7 +18,7 @@ var employee={
     },
     getAllEmpWithMachanic(callback)
     {
-        return db.query('select * from employee_tbl where employee_designation="Machanic"',callback);
+        return db.query('select u.*,e.* from user_tbl u,employee_tbl e where u.user_id=e.fk_user_id and employee_designation="Machanic"',callback);
     },
     getAllType(fk_user_id,callback)
     {
