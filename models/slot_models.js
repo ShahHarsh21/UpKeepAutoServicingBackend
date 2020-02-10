@@ -19,9 +19,6 @@ var slot={
         else{
             var today=today_year+"-"+today_month+"-"+today_date;
         }
-        
-        //var today=new Date();
-        console.log(today);
          return db.query('select * from slot_tbl where pickup_date=? ',[today],callback);
     },
     AddSlot:function(item,callback)
