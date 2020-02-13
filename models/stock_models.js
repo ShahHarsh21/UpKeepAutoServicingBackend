@@ -19,6 +19,10 @@ var stock={
     updateStock:function(stock_id,item,callback)
     {
         return db.query('update stock_tbl set quantity=? where stock_id=?',[item.quantity,stock_id],callback);
+    },
+    deleteAllstock:function(item,callback)
+    {
+            return db.query("delete from stock_tbl where stock_id in (?)",[item],callback);
     }
 }
 module.exports=stock;

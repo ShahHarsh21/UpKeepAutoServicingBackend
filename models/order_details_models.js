@@ -19,6 +19,10 @@ var order_details={
     updateOrder_Deatils:function(order_details_id,item,callback)
     {
         return db.query('update order_details set fk_order_id=?,fk_product_id=?,quantity=? where order_details_id=?',[item.fk_order_id,item.fk_product_id,item.quantity,order_details_id],callback);
+    },
+    deleteAllOrder_Details:function(item,callback)
+    {
+            return db.query("delete from order_details where order_details_id in (?)",[item],callback);
     }
 }
 module.exports=order_details;
