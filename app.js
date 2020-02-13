@@ -26,8 +26,8 @@ var machanicRouter=require('./routes/emp_with_machanic_routs');
 var slotByDate=require('./routes/slotByDate_routes');
 var emailRouter = require('./routes/email_routes');
 var emp_photo=require('./routes/emp_photo_routs');
+var emp_allotmentRouter=require('./routes/EMP_ALLOTMENT_ROUTS');
 var product_imagRouter=require('./routes/product_img_routs');
-var emp_allotRouter=require('./routes/emp_allotment_routs');
 
 var app = express();
 
@@ -63,7 +63,7 @@ app.use('/deliveryBoy',deliveryboyRouter);
 app.use('/machanic',machanicRouter);
 app.use('/slotByDate',slotByDate);
 app.use('/EmpImg',emp_photo);
-app.use('/EmpAllotment',emp_allotRouter);
+app.use('/EmpAllotment',emp_allotmentRouter);
 app.use('/Product_image',product_imagRouter);
 
 // catch 404 and forward to error handler

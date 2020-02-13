@@ -3,7 +3,8 @@ var router = express.Router();
 var allotment = require('../models/Employee_Allotement_models');
 
 router.get('/',function(req,res,next){
-    allotment.getAllAllotment(function(err,rowa){
+    console.log(req.body)
+    allotment.getAllAllotment(function(err,rows){
         if(err)
         {
             res.json(err);
@@ -28,4 +29,21 @@ router.post('/',function(req,res,next){
             res.json(rows);
         }
     });
-})
+});
+
+router.put('/',function(req,res,next){
+    console.log(req.body);
+   allotment.addAllotedEmpId(req.body,function(err,rows){
+        if(err)
+        {
+            res.json(err);
+        }
+        else
+        {
+            res.json(rows);
+        }
+    });
+});
+
+
+module.exports=router;

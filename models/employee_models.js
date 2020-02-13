@@ -14,7 +14,7 @@ var employee={
     },
     getAllEmpWithDeliveryBoy(callback)
     {
-        return db.query('select * from employee_tbl where employee_designation="Delivery Boy"',callback);
+        return db.query('select u.user_name,e.* from user_tbl u,employee_tbl e where u.user_id=e.fk_user_id and employee_designation="Delivery Boy"',callback);
     },
     getAllEmpWithMachanic(callback)
     {
