@@ -4,9 +4,10 @@ var allotment={
     {
         return db.query('select * from Employee_allotment_tbl',callback);
     },
-    AddEmpAllot:function(item,callback)
+    AddEmpAllot:function(fk_slot_id,fk_employee_id,callback)
     {
-        return db.query('insert into Employee_allotment_tbl (fk_slot_id,fk_employee_id) values (?,?)',[item.fk_slot_id,item.fk_employee_id],callback);
+        console.log("quaery");
+        return db.query('insert into employee_allotment_tbl (fk_slot_id,fk_employee_id) values (?,?)',[fk_slot_id,fk_employee_id],callback);
     }
     
 }

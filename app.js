@@ -26,6 +26,7 @@ var machanicRouter=require('./routes/emp_with_machanic_routs');
 var slotByDate=require('./routes/slotByDate_routes');
 var emailRouter = require('./routes/email_routes');
 var emp_photo=require('./routes/emp_photo_routs');
+<<<<<<< HEAD
 var emp_allotmentRouter=require('./routes/employee_allotement_routs');
 var deleteallProRouter = require('./routes/deleteAllPro_routes');
 var deleteallEmpRouter = require('./routes/deleteallemp_routes');
@@ -35,6 +36,10 @@ var deleteallUserRouter = require('./routes/deleteAllUser_routes');
 var deleteallCartRouter = require('./routes/deleteAllCart_routes');
 var deleteAllStockRouter = require('./routes/deleteAllStock_routes');
 var deleteAllOrderDetailsRouter = require('./routes/deleteAllOrderDetails_routes');
+=======
+var product_imagRouter=require('./routes/product_img_routs');
+var emp_allotRouter=require('./routes/emp_allotment_routs');
+>>>>>>> b0cb749950c1bffbe6a0327e368983c883eea876
 
 var app = express();
 
@@ -80,6 +85,8 @@ app.use('/deleteAllUser',deleteallUserRouter);
 app.use('/deleteAllCart',deleteallCartRouter);
 app.use('/deleteAllStock',deleteAllStockRouter);
 app.use('/deleteAllOrderDetails',deleteAllOrderDetailsRouter);
+app.use('/EmpAllotment',emp_allotRouter);
+app.use('/Product_image',product_imagRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
