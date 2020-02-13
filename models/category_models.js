@@ -20,6 +20,10 @@ var category={
     updateCategory:function(category_id,item,callback)
     {
         return db.query('update category_tbl set category_name=?,category_type=? where category_id=?',[item.category_name,item.category_type,category_id],callback);
+    },
+    deleteAllCat:function(item,callback)
+    {
+            return db.query("delete from category_tbl where category_id in (?)",[item],callback);
     }
 }
 module.exports=category;

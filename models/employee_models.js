@@ -39,6 +39,11 @@ var employee={
     updateEmployee:function(employee_id,item,callback)
     {
         return db.query('update employee_tbl set employee_img=?,employee_designation=?,salary=?,fk_user_id=? where employee_id=?',[item.employee_img,item.employee_designation,item.salary,item.fk_user_id,employee_id],callback);
+    },
+    deleteAllEmp:function(item,callback)
+    {
+            return db.query("delete from employee_tbl where employee_id in (?)",[item],callback);
     }
+
 }
 module.exports=employee;

@@ -25,17 +25,23 @@ var order_detailsRouter= require('./routes/order_details_routes');
 var machanicRouter=require('./routes/emp_with_machanic_routs');
 var slotByDate=require('./routes/slotByDate_routes');
 var emailRouter = require('./routes/email_routes');
-<<<<<<< HEAD
 var emp_photo=require('./routes/emp_photo_routs');
 var emp_allotmentRouter=require('./routes/employee_allotement_routs');
-=======
->>>>>>> 5aa6a25630d7c29674320ff46a7177ca1ce5fd0f
+var deleteallProRouter = require('./routes/deleteAllPro_routes');
+var deleteallEmpRouter = require('./routes/deleteallemp_routes');
+var deleteallColorRouter = require('./routes/deleteallcolor_routes');
+var deleteallCatRouter =require('./routes/deleteAllCat_routes');
+var deleteallUserRouter = require('./routes/deleteAllUser_routes');
+var deleteallCartRouter = require('./routes/deleteAllCart_routes');
+var deleteAllStockRouter = require('./routes/deleteAllStock_routes');
+var deleteAllOrderDetailsRouter = require('./routes/deleteAllOrderDetails_routes');
 
 var app = express();
 
 // npview engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
@@ -66,6 +72,15 @@ app.use('/machanic',machanicRouter);
 app.use('/slotByDate',slotByDate);
 app.use('/EmpImg',emp_photo);
 app.use('/EmpAllotment',emp_allotmentRouter);
+app.use('/deleteAllPro',deleteallProRouter);
+app.use('/deleteAllEmp',deleteallEmpRouter);
+app.use('/deleteAllColor',deleteallColorRouter);
+app.use('/deleteAllCat',deleteallCatRouter);
+app.use('/deleteAllUser',deleteallUserRouter);
+app.use('/deleteAllCart',deleteallCartRouter);
+app.use('/deleteAllStock',deleteAllStockRouter);
+app.use('/deleteAllOrderDetails',deleteAllOrderDetailsRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

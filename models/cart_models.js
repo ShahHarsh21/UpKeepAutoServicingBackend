@@ -19,6 +19,11 @@ var cart={
     updateCart:function(cart_id,item,callback)
     {
         return db.query('update cart_tbl set fk_user_id=?,fk_product_id=?,quantity=? where cart_id=?',[item.fk_user_id,item.fk_product_id,item.quantity,cart_id],callback);
+    },
+    deleteAllCart:function(item,callback)
+    {
+            return db.query("delete from cart_tbl where cart_id in (?)",[item],callback);
     }
+
 }
 module.exports=cart;
