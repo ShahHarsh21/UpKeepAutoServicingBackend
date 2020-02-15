@@ -26,8 +26,8 @@ var machanicRouter=require('./routes/emp_with_machanic_routs');
 var slotByDate=require('./routes/slotByDate_routes');
 var emailRouter = require('./routes/email_routes');
 var emp_photo=require('./routes/emp_photo_routs');
-<<<<<<< HEAD
-var emp_allotmentRouter=require('./routes/employee_allotement_routs');
+
+
 var deleteallProRouter = require('./routes/deleteAllPro_routes');
 var deleteallEmpRouter = require('./routes/deleteallemp_routes');
 var deleteallColorRouter = require('./routes/deleteallcolor_routes');
@@ -36,10 +36,8 @@ var deleteallUserRouter = require('./routes/deleteAllUser_routes');
 var deleteallCartRouter = require('./routes/deleteAllCart_routes');
 var deleteAllStockRouter = require('./routes/deleteAllStock_routes');
 var deleteAllOrderDetailsRouter = require('./routes/deleteAllOrderDetails_routes');
-=======
 var product_imagRouter=require('./routes/product_img_routs');
-var emp_allotRouter=require('./routes/emp_allotment_routs');
->>>>>>> b0cb749950c1bffbe6a0327e368983c883eea876
+var emp_allotRouter=require('./routes/emp_allotment_roter');
 
 var app = express();
 
@@ -76,7 +74,7 @@ app.use('/deliveryBoy',deliveryboyRouter);
 app.use('/machanic',machanicRouter);
 app.use('/slotByDate',slotByDate);
 app.use('/EmpImg',emp_photo);
-app.use('/EmpAllotment',emp_allotmentRouter);
+
 app.use('/deleteAllPro',deleteallProRouter);
 app.use('/deleteAllEmp',deleteallEmpRouter);
 app.use('/deleteAllColor',deleteallColorRouter);
