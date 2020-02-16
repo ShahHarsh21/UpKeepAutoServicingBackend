@@ -26,7 +26,7 @@ var machanicRouter=require('./routes/emp_with_machanic_routs');
 var slotByDate=require('./routes/slotByDate_routes');
 var emailRouter = require('./routes/email_routes');
 var emp_photo=require('./routes/emp_photo_routs');
-
+var vehicle_assignedRouter=require('./routes/vehicle_assigned_routes');
 
 var deleteallProRouter = require('./routes/deleteAllPro_routes');
 var deleteallEmpRouter = require('./routes/deleteallemp_routes');
@@ -85,6 +85,8 @@ app.use('/deleteAllStock',deleteAllStockRouter);
 app.use('/deleteAllOrderDetails',deleteAllOrderDetailsRouter);
 app.use('/EmpAllotment',emp_allotRouter);
 app.use('/Product_image',product_imagRouter);
+app.use('/Vehicle_assigned',vehicle_assignedRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
