@@ -18,6 +18,7 @@ var order_detailsRouter= require('./routes/order_details_routes');
 var emailRouter = require('./routes/email_routes');
 var product_imagRouter=require('./routes/product_img_routs');
 var vehicle_assignedRouter=require('./routes/vehicle_assigned_routes');
+var serviceRouter=require('./routes/service_routs');
 
 var deleteallProRouter = require('./routes/deleteAllPro_routes');
 var deleteallCatRouter =require('./routes/deleteAllCat_routes');
@@ -29,6 +30,7 @@ var product_imagRouter=require('./routes/product_img_routs');
 var workerRouter = require('./routes/worker_routes');
 var worker_imgRouter = require('./routes/worker_image_routes');
 var deleteWorkerRoutes = require('./routes/deleteAllworker_routes');
+var deleteAllServiceRouter=require('./routes/deleteAllService_routs');
 
 var app = express();
 
@@ -66,7 +68,8 @@ app.use('/worker',workerRouter);
 app.use('/worker_image',worker_imgRouter);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
 app.use('/deleteWorker',deleteWorkerRoutes);
-
+app.use('/service',serviceRouter);
+app.use('/deleteService',deleteAllServiceRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

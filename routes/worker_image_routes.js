@@ -32,19 +32,6 @@ router.get('/:worker_id', function (req, res, next) {
 });
 
 
-router.post('/:worker_id',upload.single('img'), function (req, res, next) {
-    workerPhotos.addWorkerPhoto(req.params.worker_id,req.file != null ? req.file.filename : req.body.img,function (err, rows) {
-        if (err) {
-            console.log('error');
-            res.json(err);
-        }
-        else {
-            console.log('rows');
-            res.json(rows);
-        }
-    });
-});
-
 router.put('/:worker_id',upload.single('img'), function (req, res, next) {
     workerPhotos.updateWorkerPhoto(req.params.worker_id,req.file != null ? req.file.filename : req.body.img,function (err, rows) {
         if (err) {

@@ -28,11 +28,6 @@ var worker={
     {
         return db.query('select worker_image from worker_tbl where worker_id=?',[worker_id],callback);
     },
-
-    addWorkerPhoto: function (item,filename, callback) 
-    {
-        return db.query('insert into worker_tbl (worker_image) VALUES (?)', [filename,item.worker_image], callback);
-    },
     updateWorkerPhoto: function (worker_id,filename, callback) 
     {
         return db.query('update worker_tbl set worker_image=? where worker_id=?', [filename,worker_id], callback);
