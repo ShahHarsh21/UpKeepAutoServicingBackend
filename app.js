@@ -28,7 +28,7 @@ var deleteAllOrderDetailsRouter = require('./routes/deleteAllOrderDetails_routes
 var product_imagRouter=require('./routes/product_img_routs');
 var workerRouter = require('./routes/worker_routes');
 var worker_imgRouter = require('./routes/worker_image_routes');
-
+var deleteWorkerRoutes = require('./routes/deleteAllworker_routes');
 
 var app = express();
 
@@ -65,7 +65,7 @@ app.use('/Product_image',product_imagRouter);
 app.use('/worker',workerRouter);
 app.use('/worker_image',worker_imgRouter);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
-
+app.use('/deleteWorker',deleteWorkerRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
