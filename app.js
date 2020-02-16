@@ -10,37 +10,22 @@ var loginRouter=require('./routes/login_routes');
 var signupRouter=require('./routes/signup_routes');
 var productRouter = require('./routes/product_routes');
 var categoryRouter = require('./routes/category_routes');
-var colorRouter =require('./routes/color_routes');
-var employeeRouter = require('./routes/employee_routes');
-var emp_With_UsernameRouter=require('./routes/emp_with_username');
-var emp_designation_Router=require('./routes/employee_designation_routs');
-var emp_type_Router=require('./routes/emp_type_routs');
 var stockRouter = require('./routes/stock_routes');
 var cartRouter = require('./routes/cart_routes');
 var supplierRouter =  require('./routes/supplier_routes');
-var slotRouter = require ('./routes/slot_routes');
 var userRouter=require('./routes/user_routes');
-var deliveryboyRouter = require('./routes/emp_delivery_boy_routs');
 var order_detailsRouter= require('./routes/order_details_routes');
-var machanicRouter=require('./routes/emp_with_machanic_routs');
-var slotByDate=require('./routes/slotByDate_routes');
 var emailRouter = require('./routes/email_routes');
-var emp_photo=require('./routes/emp_photo_routs');
-
-var emp_allotmentRouter=require('./routes/EMP_ALLOTMENT_ROUTS');
 var product_imagRouter=require('./routes/product_img_routs');
-var emp_allotmentRouter=require('./routes/employee_allotement_routs');
 var deleteallProRouter = require('./routes/deleteAllPro_routes');
-var deleteallEmpRouter = require('./routes/deleteallemp_routes');
-var deleteallColorRouter = require('./routes/deleteallcolor_routes');
 var deleteallCatRouter =require('./routes/deleteAllCat_routes');
 var deleteallUserRouter = require('./routes/deleteAllUser_routes');
 var deleteallCartRouter = require('./routes/deleteAllCart_routes');
 var deleteAllStockRouter = require('./routes/deleteAllStock_routes');
 var deleteAllOrderDetailsRouter = require('./routes/deleteAllOrderDetails_routes');
-
 var product_imagRouter=require('./routes/product_img_routs');
-var emp_allotRouter=require('./routes/emp_allotment_routs');
+var workerRouter = require('./routes/worker_routes');
+var worker_imgRouter = require('./routes/worker_image_routes');
 
 var app = express();
 
@@ -64,30 +49,18 @@ app.use('/user',userRouter);
 app.use('/product',productRouter);
 app.use('/order_details',order_detailsRouter);
 app.use('/category',categoryRouter);
-app.use('/color',colorRouter);
 app.use('/email',emailRouter);
-app.use('/employee', employeeRouter);
-app.use('/emp_With_Username',emp_With_UsernameRouter);
-app.use('/emp_designation',emp_designation_Router);
-app.use('/emp_type',emp_type_Router)
 app.use('/stock',stockRouter);
 app.use('/supplier',supplierRouter);
-app.use('/slot',slotRouter);
-app.use('/deliveryBoy',deliveryboyRouter);
-app.use('/machanic',machanicRouter);
-app.use('/slotByDate',slotByDate);
-app.use('/EmpImg',emp_photo);
-app.use('/EmpAllotment',emp_allotmentRouter);
 app.use('/deleteAllPro',deleteallProRouter);
-app.use('/deleteAllEmp',deleteallEmpRouter);
-app.use('/deleteAllColor',deleteallColorRouter);
 app.use('/deleteAllCat',deleteallCatRouter);
 app.use('/deleteAllUser',deleteallUserRouter);
 app.use('/deleteAllCart',deleteallCartRouter);
 app.use('/deleteAllStock',deleteAllStockRouter);
 app.use('/deleteAllOrderDetails',deleteAllOrderDetailsRouter);
-app.use('/EmpAllotment',emp_allotRouter);
 app.use('/Product_image',product_imagRouter);
+app.use('/worker',workerRouter);
+app.use('/worker_image',worker_imgRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
