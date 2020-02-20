@@ -10,7 +10,7 @@ var service={
     },
     AddService:function(item,callback)
     {
-        return db.query('insert into service_tbl (fk_user_id,vehicle_no,meter_reading,fuel_tank,remark,complaints) values(?,?,?,?,?,?)',[item.fk_user_id,item.vehicle_no,item.meter_reading,item.fuel_tank,item.remark,item.complaints],callback);
+        return db.query('insert into service_tbl (vehicle_no,meter_reading,fuel_tank,remark,complaints) values(?,?,?,?,?)',[item.vehicle_no,item.meter_reading,item.fuel_tank,item.remark,item.complaints],callback);
     },
     updateService:function(service_id,item,callback)
     {

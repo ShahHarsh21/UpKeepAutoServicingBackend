@@ -32,11 +32,11 @@ router.get('/:user_id',function(req,res,next){
      user.AddUser(req.body,function(err,rows){                   //Insert
          if(err)
          {
-             res.json(err);
+            res.json(err);
          }
          if(rows)
          {
-             res.json(rows);    
+            res.json(rows);    
          }
      });
  });
@@ -44,21 +44,23 @@ router.get('/:user_id',function(req,res,next){
      user.deleteUser(req.params.user_id,function(err,rows){
          if(err)
          {
-             res.json(err);
+            res.json(err);
          }
          if(rows)
          {
-             res.json(rows);
+            res.json(rows);
          }
      });
  });
  router.put('/:user_id',function(req,res,next){
      user.updateUser(req.params.user_id,req.body,function(err,rows){
-         if(err){
-             res.json(err);
+         if(err)
+         {
+            res.json(err);
          }
-         else{
-             res.json(rows);
+         else
+         {
+            res.json(rows);
          }
      });
  });

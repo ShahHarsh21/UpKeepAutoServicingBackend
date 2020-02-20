@@ -28,7 +28,7 @@ router.get('/:service_id',function(req,res,next){
 });
 
  router.post('/',function(req,res,next){
-     service.AddService(req.body,function(err,rows){                   //Insert
+    service.AddService(req.body,function(err,rows){                   //Insert
          if(err)
          {
              res.json(err);
@@ -41,6 +41,7 @@ router.get('/:service_id',function(req,res,next){
  });
 
  router.put('/:service_id',function(req,res,next){
+     console.log(req.body);
      service.updateService(req.params.service_id,req.body,function(err,rows){
          if(err){
              res.json(err);
