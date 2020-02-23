@@ -4,7 +4,7 @@ var worker=require('../models/worker_models'); //Name of the model
 
 
 router.get('/',function(req,res,next){
-    worker.getAllWorker(function(err,rows){
+    worker.getWorkerWithAssignedCount(function(err,rows){
         if(err)
         {
             res.json(err);
