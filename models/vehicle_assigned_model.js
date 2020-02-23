@@ -40,10 +40,13 @@ var vehicle={
            return db.query("insert into vehicle_assigned_tbl (fk_service_id,fk_worker_id,status,remark) values ?",[arr1],callback); 
         }
     },
-    deleteVehicle:function(vehicle_assigned_id,callback)
+    updateWorkerPhoto: function (worker_id,filename, callback) 
     {
-        return db.query('delete from vehicle_assigned_tbl where vehicle_assigned_id=?',[vehicle_assigned_id],callback);
+        return db.query('update worker_tbl set worker_image=? where worker_id=?', [filename,worker_id], callback);
+    },
+    deleteAllWorkerByid:function(workerIdArr,callback)
+    {
+        return db.query("delete from worker_tbl where worker_id in (?)",[workerIdArr],callback);
     }
-    
 }
 module.exports=vehicle;

@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,'public/images/WorkerImages');
     },
-
+ 
     filename:(req,file,cb)=>{
         x=file.fieldname+'-'+Date.now()+path.extname(file.originalname);
         cb(null,x);
