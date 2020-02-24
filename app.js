@@ -20,6 +20,8 @@ var order_detailsRouter= require('./routes/order_details_routes');
 var emailRouter = require('./routes/email_routes');
 var product_imagRouter=require('./routes/product_img_routs');
 var vehicle_assignedRouter=require('./routes/vehicle_assigned_routes');
+var vehicle_not_assignedRouter=require('./routes/vehicle_not_assigned_routes');
+
 var serviceRouter=require('./routes/service_routs');
 var assignedWorker = require('./routes/woker_asssigned_routs');
 var deleteallProRouter = require('./routes/deleteAllPro_routes');
@@ -74,6 +76,7 @@ app.use('/worker',workerRouter);
 app.use('/worker_image',worker_imgRouter);
 app.use('/AssignedWorker',assignedWorker);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
+app.use('/Vehicle_not_assigned',vehicle_not_assignedRouter);
 app.use('/deleteWorker',deleteWorkerRoutes);
 app.use('/service',serviceRouter);
 app.use('/deleteService',deleteAllServiceRouter);

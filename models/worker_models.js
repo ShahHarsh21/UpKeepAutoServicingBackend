@@ -13,7 +13,11 @@ var worker={
     {
         return db.query('select password from worker_tbl where worker_id=?',[worker_id],callback);
     },
-    getWorkerById(worker_id,callback)
+    getWorkerWithAssignedCount(callback)
+    {
+        return db.query('select w.worker_id, w.worker_name,count(v.vehicle_assigned_id) as vehiclecount from worker_tbl as w left join vehicle_assigned_tbl as v on v.fk_worker_id = w.worker_id group by w.worker_id, w.worker_name',callback);
+    },
+    getWorkerById:function(worker_id,callback)
     {
       return db.query('select * from worker_tbl where worker_id=?',[worker_id],callback);      
     },
