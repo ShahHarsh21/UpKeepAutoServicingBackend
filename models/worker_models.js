@@ -40,6 +40,7 @@ var worker={
     },
     getWorkerPhotoByid:function(worker_id,callback)
     {
+        console.log(worker_id);
         return db.query('select worker_image from worker_tbl where worker_id=?',[worker_id],callback);
     },
     updateWorkerPhoto: function (worker_id,filename, callback)

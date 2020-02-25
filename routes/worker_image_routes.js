@@ -19,18 +19,16 @@ const storage = multer.diskStorage({
 var upload=multer({storage:storage});
 
 router.get('/:worker_id', function (req, res, next) {
+    console.log(req.params.worker_id)
     workerPhotos.getWorkerPhotoByid(req.params.worker_id,function (err, rows) {
         if (err) {
-            console.log('error');
             res.json(err);
         }
         else {
-            console.log('rows');
             res.json(rows);
         }
     });
 });
-
 
 router.put('/:worker_id',upload.single('img'), function (req, res, next) {
     workerPhotos.updateWorkerPhoto(req.params.worker_id,req.file != null ? req.file.filename : req.body.img,function (err, rows) {
@@ -41,5 +39,7 @@ router.put('/:worker_id',upload.single('img'), function (req, res, next) {
             res.json(rows);
         }
     });
+
+
 });
 module.exports = router;
