@@ -40,7 +40,7 @@ router.get('/:vehicleid',function(req,res,next){
              });        
  });
  router.delete('/:vehicle_assigned_id',function(req,res,next){
-     vehicle.   (req.params.vehicle_assigned_id,function(err,rows){
+     vehicle.deleteVehicle_assigned(req.params.vehicle_assigned_id,function(err,rows){
          if(err)
          {
              res.json(err);

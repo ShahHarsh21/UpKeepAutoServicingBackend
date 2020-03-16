@@ -61,9 +61,11 @@ var workerAllRouter=require('./routes/workerRouts');
 var worker_imgRouter = require('./routes/worker_image_routes');
 var worker_updateRouter = require('./routes/worker_update_routs');
 var deleteWorkerRoutes = require('./routes/deleteAllworker_routes');
-var deleteAllServiceRouter=require('./routes/deleteAllService_routs');
+var deleteALlServiceRouter=require('./routes/deleteAllService_routes');
 var passwordChangeRouter = require('./routes/passwordChange_Routs');
-var statusRemarkUpdateRouter = require('./routes/service_update_routs');
+var ServiceuserRouter = require('./routes/userServiceRouts');
+var AllServiceRouter = require('./routes/All_service_routs');
+//var statusRemarkUpdateRouter = require('./routes/service_update_routs');
 var deleteAllvehicle_AssignedRouter = require('./routes/vehicle_assigned_routes');
 
 var app = express();
@@ -113,7 +115,7 @@ app.use('/deleteWorker',deleteWorkerRoutes);
 app.use('/worker_update',worker_updateRouter);
 
 app.use('/service',serviceRouter);
-app.use('/deleteAllService',dateleAllServiceRouter)
+app.use('/deleteAllService',deleteALlServiceRouter);
 app.use('/user_Service',ServiceuserRouter);
 
 
