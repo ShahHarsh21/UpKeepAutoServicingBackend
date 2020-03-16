@@ -67,6 +67,7 @@ var ServiceuserRouter = require('./routes/userServiceRouts');
 var AllServiceRouter = require('./routes/All_service_routs');
 //var statusRemarkUpdateRouter = require('./routes/service_update_routs');
 var deleteAllvehicle_AssignedRouter = require('./routes/vehicle_assigned_routes');
+var vehicleRouter = require('./routes/vehicle_routs');
 
 var app = express();
 
@@ -122,6 +123,7 @@ app.use('/user_Service',ServiceuserRouter);
 app.use('/AssignedWorker',assignedWorker);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
 app.use('/Vehicle_not_assigned',vehicle_not_assignedRouter);
+app.use('/vehicleAssigned',vehicleRouter);
 app.use('/AllService',AllServiceRouter);
 
 app.use('/cart',cartRouter);
