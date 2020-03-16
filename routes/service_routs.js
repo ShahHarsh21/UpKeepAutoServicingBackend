@@ -41,7 +41,6 @@ router.get('/:service_id',function(req,res,next){
  });
 
  router.put('/:service_id',function(req,res,next){
-     console.log(req.body);
      service.updateService(req.params.service_id,req.body,function(err,rows){
          if(err){
              res.json(err);
@@ -51,4 +50,17 @@ router.get('/:service_id',function(req,res,next){
          }
      });
  });
+
+ router.delete('/:service_id',function(req,res,next){
+    service.deleteService(req.params.service_id,function(err,rows){
+        if(err)
+        {
+           res.json(err);
+        }
+        if(rows)
+        {
+           res.json(rows);
+        }
+    });
+});
 module.exports=router;

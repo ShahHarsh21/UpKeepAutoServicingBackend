@@ -2,7 +2,6 @@ var db=require('../dbconnection');
 var worker={
     login:function (item,callback)
     {
-        console.log(item);
         return db.query("select * from worker_tbl where email_id=? and password=?",[item.email_id,item.password],callback);
     },
     getAllWorker:function(callback)
@@ -19,7 +18,7 @@ var worker={
     },
     getWorkerById:function(worker_id,callback)
     {
-      return db.query('select * from worker_tbl where worker_id=?',[worker_id],callback);      
+        return db.query('select * from worker_tbl where worker_id=?',[worker_id],callback);      
     },
     getAssignedWorker(fk_worker_id,callback)
     {
@@ -31,16 +30,15 @@ var worker={
     },
     updateWorker:function(worker_id,item,callback)
     {
-
+        
         return db.query('update worker_tbl set worker_name=?, email_id=?, password=?, mobile_no=?,address=?, joining_date=?, worker_image=? where worker_id=?',[item.worker_name,item.email_id,item.password,item.mobile_no,item.address,item.joining_date,item.worker_image,worker_id],callback);
     },
-    deleteAllWorkerByid:function(workerIdArr,callback)
+    deleteAllWorker:function(item,callback)
     {
-        return db.query("delete from worker_tbl where worker_id in (?)",[workerIdArr],callback);
+        return db.query("delete from worker_tbl where worker_id in (?)",[item],callback);
     },
     getWorkerPhotoByid:function(worker_id,callback)
     {
-        console.log(worker_id);
         return db.query('select worker_image from worker_tbl where worker_id=?',[worker_id],callback);
     },
     updateWorkerPhoto: function (worker_id,filename, callback)
@@ -50,6 +48,10 @@ var worker={
     getWorkerImage(worker_id,callback)
     {
         return db.query('select worker_image from worker_tbl where worker_id=?',[worker_id],callback);
+    },
+    deleteWorker:function(worker_id,callback)
+    {
+        return db.query('delete from worker_tbl where worker_id=?',[worker_id],callback);
     }
 }
 module.exports=worker;
