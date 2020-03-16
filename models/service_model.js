@@ -18,7 +18,13 @@ var service={
     },
     AddService:function(item,callback)
     {
-        return db.query('insert into service_tbl (vehicle_no,meter_reading,fuel_tank,remark,complaints) values(?,?,?,?,?)',[item.vehicle_no,item.meter_reading,item.fuel_tank,item.remark,item.complaints],callback);
+        var Arrival_date = new Date();
+        var Estimated_date = new Date();
+        Estimated_date.setDate(Arrival_date.getDate()+3);
+        // var nowDate = new Date(); 
+        // var date = nowDate.getFullYear()+'/'+(nowDate.getMonth()+1)+'/'+nowDate.getDate(); 
+        // console.log(Estimated_date);
+        return db.query('insert into service_tbl (fk_user_id,vehicle_no,meter_reading,fuel_tank,remark,complaints,Arrival_date,Estimated_date) values(?,?,?,?,?,?,?,?)',[item.fk_user_id,item.vehicle_no,item.meter_reading,item.fuel_tank,item.remark,item.complaints,Arrival_date,Estimated_date],callback);
     },
     updateService:function(service_id,item,callback)
     {
