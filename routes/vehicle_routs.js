@@ -1,4 +1,4 @@
-var express=require('express');
+    var express=require('express');
 var router=express.Router(); // Router has only one which have all the function
 var vehicle=require('../models/vehicle_assigned_model'); //Name of the model
 router.get('/:vehicle_assigned_id',function(req,res,next){

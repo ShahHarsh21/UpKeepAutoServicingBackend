@@ -53,7 +53,7 @@ var vehicle={
     },
     deleteAllVehicle_assigned:function(item,callback)
     {
-        console.log(vehicle_assigned_id);
+        console.log(item);
         return db.query("delete from vehicle_assigned_tbl where vehicle_assigned_id in (?)",[item],callback);
     }
 }

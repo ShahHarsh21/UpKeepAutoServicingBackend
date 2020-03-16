@@ -66,8 +66,9 @@ var passwordChangeRouter = require('./routes/passwordChange_Routs');
 var ServiceuserRouter = require('./routes/userServiceRouts');
 var AllServiceRouter = require('./routes/All_service_routs');
 //var statusRemarkUpdateRouter = require('./routes/service_update_routs');
-var deleteAllvehicle_AssignedRouter = require('./routes/vehicle_assigned_routes');
+//var deleteAllvehicle_AssignedRouter = require('./routes/vehicle_assigned_routes');
 var vehicleRouter = require('./routes/vehicle_routs');
+var deleteAllvehicle_AssignedRouter = require('./routes/deleteAllvehicle_Assigned_routes');
 
 var app = express();
 
