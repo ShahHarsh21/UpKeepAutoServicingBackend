@@ -44,9 +44,15 @@ var vehicle={
     {
         return db.query('update worker_tbl set worker_image=? where worker_id=?', [filename,worker_id], callback);
     },
-    deleteAllWorkerByid:function(workerIdArr,callback)
+    deleteVehicle_assigned:function(vehicle_assigned_id,callback)
     {
-        return db.query("delete from worker_tbl where worker_id in (?)",[workerIdArr],callback);
+        console.log(vehicle_assigned_id);
+        return db.query('delete from vehicle_assigned_tbl where vehicle_assigned_id=?',[vehicle_assigned_id],callback);
+    },
+    deleteAllVehicle_assigned:function(item,callback)
+    {
+        console.log(vehicle_assigned_id);
+        return db.query("delete from vehicle_assigned_tbl where vehicle_assigned_id in (?)",[item],callback);
     }
 }
 module.exports=vehicle;

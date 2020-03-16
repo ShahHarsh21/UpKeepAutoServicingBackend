@@ -39,6 +39,8 @@ var deleteWorkerRoutes = require('./routes/deleteAllworker_routes');
 var deleteAllServiceRouter=require('./routes/deleteAllService_routs');
 var passwordChangeRouter = require('./routes/passwordChange_Routs');
 var statusRemarkUpdateRouter = require('./routes/service_update_routs');
+var deleteAllvehicle_AssignedRouter = require('./routes/vehicle_assigned_routes');
+
 var app = express();
 
 // npview engine setup
@@ -73,6 +75,7 @@ app.use('/deleteAllUser',deleteallUserRouter);
 app.use('/deleteAllCart',deleteallCartRouter);
 app.use('/deleteAllStock',deleteAllStockRouter);
 app.use('/deleteAllOrderDetails',deleteAllOrderDetailsRouter);
+app.use('/deleteAllvehicle_Assigned',deleteAllvehicle_AssignedRouter);
 app.use('/Product_image',product_imagRouter);
 app.use('/worker',workerRouter);
 app.use('/worker_image',worker_imgRouter);

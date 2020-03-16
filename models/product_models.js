@@ -14,6 +14,7 @@ var product={
     },
     deleteProduct:function(product_id,callback)
     {
+        console.log(product_id);
         return db.query('delete from product_tbl where product_id=?',[product_id],callback);
     },
     updateProduct:function(product_id,item,callback)

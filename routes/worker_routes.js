@@ -15,6 +15,18 @@ router.get('/',function(req,res,next){
         }
     });
 });
+router.delete('/:worker_id',function(req,res,next){
+    worker.deleteWorker(req.params.worker_id,function(err,rows){
+        if(err)
+        {
+           res.json(err);
+        }
+        if(rows)
+        {
+           res.json(rows);
+        }
+    });
+});
 router.get('/:worker_id',function(req,res,next){
     worker.getWorkerById(req.params.worker_id,function(err,rows){
         if(err)
