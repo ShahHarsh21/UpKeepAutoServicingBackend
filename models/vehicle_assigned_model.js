@@ -8,7 +8,8 @@ var vehicle={
     {
         return db.query('SELECT v.vehicle_assigned_id,v.status,v.remark,s.service_id,s.vehicle_no,w.worker_id,w.worker_name,w.worker_image FROM vehicle_assigned_tbl v join service_tbl s on s.service_id = v.fk_service_id join worker_tbl w on w.worker_id = v.fk_worker_id',callback);
     },
-    getNotAssignedVehicles(callback) {
+    getNotAssignedVehicles(callback)
+    {
         return db.query('SELECT s.* FROM service_tbl s WHERE s.service_id NOT IN ( SELECT v.fk_service_id FROM vehicle_assigned_tbl v )',callback);
     },
     // getAllVehicleNames:function(callback)
@@ -17,7 +18,8 @@ var vehicle={
     // },
     getVehicleById:function(vehicle_assigned_id,callback)
     {
-        return db.query('select * from vehicle_assigned_tbl where vehicle_assigned_id=?',[vehicle_assigned_id],callback);
+        console.log(vehicle_assigned_id);
+        return db.query('select v.*,s.*,w.worker_name,w.worker_image,u.user_name from vehicle_assigned_tbl v,service_tbl s,worker_tbl w,user_tbl u where v.fk_service_id = s.service_id and v.fk_worker_id = w.worker_id and s.fk_user_id = u.user_id and v.vehicle_assigned_id=?',[vehicle_assigned_id],callback);
     },
     getAssignedWorkerByVehicleId:function(vehicle_id,callback)
     {

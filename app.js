@@ -51,7 +51,7 @@ var serviceRouter=require('./routes/service_routs');
 var ServiceuserRouter = require('./routes/userServiceRouts');
 var dateleAllServiceRouter = require('./routes/deleteAllService_routes');
 var AllServiceRouter = require('./routes/All_service_routs');
-
+var vehicleRouter = require('./routes/vehicle_routs');
 
 var app = express();
 
@@ -94,6 +94,7 @@ app.use('/user_Service',ServiceuserRouter);
 app.use('/AssignedWorker',assignedWorker);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
 app.use('/Vehicle_not_assigned',vehicle_not_assignedRouter);
+app.use('/vehicleAssigned',vehicleRouter);
 app.use('/AllService',AllServiceRouter);
 
 app.use('/cart',cartRouter);
