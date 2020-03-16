@@ -8,6 +8,10 @@ var user={
     {
         return db.query('select * from user_tbl',callback);
     },
+    getUserWithService(user_id,callback)
+    {
+        return db.query('select s.vehicle_no,u.*,v.status from user_tbl u,service_tbl s,vehicle_assigned_tbl v where u.user_id=s.fk_user_id and s.service_id = v.fk_service_id and u.user_id = ?',[user_id],callback);
+    },
     getUserById:function(user_id,callback)
     {
         return db.query('select * from user_tbl where user_id=?',[user_id],callback);

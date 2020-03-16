@@ -1,7 +1,6 @@
 var express=require('express');
 var router=express.Router(); // Router has only one which have all the function
 var user=require('../models/user_models'); //Name of the model
-var path=require('path');
 
     router.get('/',function(req,res,next){
     user.getAllUser(function(err,rows){
@@ -23,6 +22,7 @@ router.get('/:user_id',function(req,res,next){
         }
         if(rows)
         {
+            console.log("rows");
             res.json(rows);
         }
     });

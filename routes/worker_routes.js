@@ -64,4 +64,18 @@ router.get('/:worker_id',function(req,res,next){
          }
      });
  });
+ router.delete('/:worker_id',function(req,res,next){
+    console.log(req.body);
+    worker.deleteWorker(req.params.worker_id,function(err,rows){
+        if(err)
+        {
+           res.json(err);
+        }
+        if(rows)
+        {
+           res.json(rows);
+        }
+    });
+});
+
 module.exports=router;
