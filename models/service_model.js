@@ -6,7 +6,8 @@ var service={
     },
     getAllServiceWithAll(callback)
     {
-        return db.query('select s.*,u.user_name,w.worker_name,v.* from service_tbl s,worker_tbl w,user_tbl u,vehicle_assigned_tbl v where s.service_id = v.fk_service_id and s.fk_user_id = u.user_id and w.worker_id = v.fk_worker_id',callback);
+        //change done by drashti
+        return db.query('select s.*,u.user_name,w.worker_name,v.* from service_tbl s left join vehicle_assigned_tbl as v on v.fk_service_id = s.service_id left join worker_tbl as w on w.worker_id = v.fk_worker_id join user_tbl as u on  u.user_id = s.fk_user_id order by s.Arrival_date desc',callback);
     },
     getServiceById:function(service_id,callback)
     {
@@ -14,7 +15,8 @@ var service={
     },
     getUserServiceByUserId(service_id,callback)
     {
-        return db.query('select u.*,s.*,v.*,w.worker_name from user_tbl u,service_tbl s,vehicle_assigned_tbl v,worker_tbl w where s.fk_user_id=u.user_id and v.fk_worker_id=w.worker_id and s.service_id=v.fk_service_id and service_id=?',[service_id],callback);
+        //changes done by drashti for service view more page
+        return db.query('select s.*,u.user_name,u.email_id,u.address,u.mobile_no,w.worker_name,v.* from service_tbl s left join vehicle_assigned_tbl as v on v.fk_service_id = s.service_id left join worker_tbl as w on w.worker_id = v.fk_worker_id join user_tbl as u on  u.user_id = s.fk_user_id where s.service_id=?',[service_id],callback);
     },
     AddService:function(item,callback)
     {
