@@ -41,7 +41,6 @@ router.get('/:worker_id',function(req,res,next){
 });
 
  router.post('/',function(req,res,next){
-     console.log(req.body);
     worker.AddWorker(req.body,function(err,rows){                   //Insert
          if(err)
          {
@@ -65,7 +64,6 @@ router.get('/:worker_id',function(req,res,next){
      });
  });
  router.delete('/:worker_id',function(req,res,next){
-    console.log(req.body);
     worker.deleteWorker(req.params.worker_id,function(err,rows){
         if(err)
         {

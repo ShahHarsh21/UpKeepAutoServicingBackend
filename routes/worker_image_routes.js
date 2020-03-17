@@ -19,7 +19,6 @@ const storage = multer.diskStorage({
 var upload=multer({storage:storage});
 
 router.get('/:worker_id', function (req, res, next) {
-    console.log(req.params.worker_id)
     workerPhotos.getWorkerPhotoByid(req.params.worker_id,function (err, rows) {
         if (err) {
             res.json(err);
