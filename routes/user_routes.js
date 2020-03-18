@@ -22,7 +22,6 @@ router.get('/:user_id',function(req,res,next){
         }
         if(rows)
         {
-            console.log("rows");
             res.json(rows);
         }
     });

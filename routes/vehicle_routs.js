@@ -6,12 +6,10 @@ router.get('/:vehicle_assigned_id',function(req,res,next){
     vehicle.getVehicleById(req.params.vehicle_assigned_id,function(err,rows){
         if(err)
         {
-            console.log("err");
             res.json(err);
         }
         if(rows)
         {
-            console.log("rows");
             res.json(rows);
         }
     });
