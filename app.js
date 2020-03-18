@@ -28,6 +28,7 @@ var deleteWorkerRoutes = require('./routes/deleteAllworker_routes');
 var productRouter = require('./routes/product_routes');
 var product_imagRouter=require('./routes/product_img_routs');
 var product_imagRouter=require('./routes/product_img_routs');
+var productOtherRouter = require('./routes/product_other_routs');
 var deleteallProRouter = require('./routes/deleteAllPro_routes');
 
 var categoryRouter = require('./routes/category_routes');
@@ -111,6 +112,7 @@ app.use('/deleteAllStock',deleteAllStockRouter);
 app.use('/deleteAllOrderDetails',deleteAllOrderDetailsRouter);
 app.use('/deleteAllvehicle_Assigned',deleteAllvehicle_AssignedRouter);
 app.use('/Product_image',product_imagRouter);
+app.use('/productServices',productOtherRouter );
 app.use('/worker',workerRouter);
 app.use('/worker_image',worker_imgRouter);
 app.use('/deleteWorker',deleteWorkerRoutes);

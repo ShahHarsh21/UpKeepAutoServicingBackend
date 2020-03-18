@@ -8,6 +8,10 @@ var product={
     {
         return db.query('select * from product_tbl where product_id=?',[product_id],callback);
      },
+     getAllProductByCategory:function(category_id,callback)
+     {  
+        return db.query('select * from product_tbl where fk_cat_id = ?',[category_id],callback);
+     },
     AddProduct:function(item,callback)
     {
         return db.query('insert into product_tbl (product_name,product_description,fk_cat_id,product_price,product_image,fk_color_id) values(?,?,?,?,?,?)',[item.product_name,item.product_description,item.fk_cat_id,item.product_price,item.product_image,item.fk_color_id],callback);
