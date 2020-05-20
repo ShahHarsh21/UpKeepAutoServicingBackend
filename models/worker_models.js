@@ -8,6 +8,14 @@ var worker={
     {
         return db.query('select * from worker_tbl',callback);
     },
+    getWorkerByEmailId(email_id , callback)
+    {
+        return db.query('select * from worker_tbl where email_id=?',[email_id],callback);
+    },
+    changePassword(item,worker_id,callback)
+    {
+        return db.query('update worker_tbl set worker_name=?, email_id=?, password=? where worker_id=?',[item.email_id,item.password,worker_id],callback);
+    },
     getPasswordById(worker_id,callback)
     {
         return db.query('select password from worker_tbl where worker_id=?',[worker_id],callback);

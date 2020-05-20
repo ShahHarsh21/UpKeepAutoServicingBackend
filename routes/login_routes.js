@@ -15,6 +15,7 @@ router.get('/',function(req,res,next){
         }
     })
 });
+
 router.post('/',function(req,res,next){
     
     user_router.login(req.body,function(err,rows){

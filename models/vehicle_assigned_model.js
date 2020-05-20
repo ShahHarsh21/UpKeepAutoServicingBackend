@@ -42,6 +42,10 @@ var vehicle={
            return db.query("insert into vehicle_assigned_tbl (fk_service_id,fk_worker_id,status,remark) values ?",[arr1],callback); 
         }
     },
+    updateAssignedVehicle(item,callback)
+    {
+        return db.query('update vehicle_assigned_tbl set Required_products=? where vehicle_assigned_id=?',[item.Products,item.vehicle_assigned_id],callback);
+    },
     updateWorkerPhoto: function (worker_id,filename, callback) 
     {
         return db.query('update worker_tbl set worker_image=? where worker_id=?', [filename,worker_id], callback);

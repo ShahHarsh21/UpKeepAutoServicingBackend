@@ -16,6 +16,34 @@ const storage = multer.diskStorage({
 
 var upload=multer({storage:storage});
 
+router.get('/',function(req,res,next){
+    product_image.getAllImages(function(err,rows){
+        if(err)
+        {
+            res.json(err);
+        }
+        if(rows)
+        {
+            res.json(rows);
+        }
+    });
+});
+
+router.get('/:product_id',function(req,res,next){
+    console.log(req.params.product_id);
+    product_image.getImageById(req.params.product_id,function(err,rows){
+        if(err)
+        {
+            res.json(err);
+        }
+        if(rows)
+        {
+            res.json(rows);
+        }
+    });
+});
+
+
 router.put('/:product_id',upload.single('img'), function (req, res, next) {
     product_image.updatePhoto(req.params.product_id,req.file != null ? req.file.filename : req.body.img,function (err, rows) {
         if (err) {
@@ -25,4 +53,5 @@ router.put('/:product_id',upload.single('img'), function (req, res, next) {
             res.json(rows);
         }
     });
-});module.exports=router;
+});
+module.exports=router;

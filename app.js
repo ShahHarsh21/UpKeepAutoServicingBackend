@@ -22,11 +22,11 @@ var workerDetailsRouter=require('./routes/worker_details_routs');
 var workerRouter = require('./routes/worker_routes');
 var workerAllRouter=require('./routes/workerRouts');
 var worker_imgRouter = require('./routes/worker_image_routes');
+var worker_passwordRouter = require('./routes/worker_password_routs');
 var worker_updateRouter = require('./routes/worker_update_routs');
 var deleteWorkerRoutes = require('./routes/deleteAllworker_routes');
 
 var productRouter = require('./routes/product_routes');
-var product_imagRouter=require('./routes/product_img_routs');
 var product_imagRouter=require('./routes/product_img_routs');
 var productOtherRouter = require('./routes/product_other_routs');
 var deleteallProRouter = require('./routes/deleteAllPro_routes');
@@ -66,10 +66,18 @@ var deleteALlServiceRouter=require('./routes/deleteAllService_routes');
 var passwordChangeRouter = require('./routes/passwordChange_Routs');
 var ServiceuserRouter = require('./routes/userServiceRouts');
 var AllServiceRouter = require('./routes/All_service_routs');
-//var statusRemarkUpdateRouter = require('./routes/service_update_routs');
-//var deleteAllvehicle_AssignedRouter = require('./routes/vehicle_assigned_routes');
-var vehicleRouter = require('./routes/vehicle_routs');
+var statusRemarkUpdateRouter = require('./routes/service_update_routs');
+var deleteAllvehicle_AssignedRouter = require('./routes/vehicle_assigned_routes');
+var vehicle_Router = require('./routes/vehicle_routs');
 var deleteAllvehicle_AssignedRouter = require('./routes/deleteAllvehicle_Assigned_routes');
+var stock_quantity_router = require('./routes/stock_quantity_routs');
+var supplier_user_Router = require('./routes/supplier_user_routs');
+var stock_supplier_router = require('./routes/supplier_stock_routs');
+var deleteAllSupplier_router = require('./routes/deleteAllSupplier_router');
+var supplier_product_Router = require('./routes/supplier_product_routs');
+
+var leaveRouter = require('./routes/leave_routs');
+var pastLEaveRouter = require('./routes/past_leaves_routs');
 
 var app = express();
 
@@ -113,8 +121,10 @@ app.use('/deleteAllOrderDetails',deleteAllOrderDetailsRouter);
 app.use('/deleteAllvehicle_Assigned',deleteAllvehicle_AssignedRouter);
 app.use('/Product_image',product_imagRouter);
 app.use('/productServices',productOtherRouter );
+
 app.use('/worker',workerRouter);
 app.use('/worker_image',worker_imgRouter);
+app.use('/worker_password',worker_passwordRouter);
 app.use('/deleteWorker',deleteWorkerRoutes);
 app.use('/worker_update',worker_updateRouter);
 
@@ -126,7 +136,7 @@ app.use('/user_Service',ServiceuserRouter);
 app.use('/AssignedWorker',assignedWorker);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
 app.use('/Vehicle_not_assigned',vehicle_not_assignedRouter);
-app.use('/vehicleAssigned',vehicleRouter);
+app.use('/vehicleAssigned',vehicle_Router);
 app.use('/AllService',AllServiceRouter);
 
 app.use('/cart',cartRouter);
@@ -140,11 +150,22 @@ app.use('/category',categoryRouter);
 app.use('/deleteAllCat',deleteallCatRouter);
 
 app.use('/stock',stockRouter);
-app.use('/deleteAllStock',deleteAllStockRouter);
+app.use('/stockQuantity',stock_quantity_router);
+app.use('/stock_supplier',stock_supplier_router);
 
+app.use('/deleteAllStock',deleteAllStockRouter);
+app.use('/statusRemark',statusRemarkUpdateRouter);
 app.use('/order_details',order_detailsRouter);
 app.use('/deleteAllOrderDetails',deleteAllOrderDetailsRouter);
+
 app.use('/supplier',supplierRouter);
+app.use('/supplier_user',supplier_user_Router);
+app.use('/supplier_product',supplier_product_Router);
+app.use('/deleteSupplier',deleteAllSupplier_router);
+
+app.use('/leave',leaveRouter);
+app.use('/pastLeave',pastLEaveRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

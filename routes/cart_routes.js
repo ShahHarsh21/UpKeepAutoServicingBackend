@@ -10,6 +10,7 @@ var path=require('path');
         }
         if(rows)
         {
+            console.log('rows');
             res.json(rows);
         }
     });

@@ -3,7 +3,7 @@ var router=express.Router(); // Router has only one which have all the function
 var product=require('../models/product_models'); //Name of the model
 var path=require('path');
    
-  router.get('/',function(req,res,next){
+router.get('/',function(req,res,next){
     product.getAllProduct(function(err,rows){
         if(err)
         {

@@ -15,4 +15,15 @@ router.get('/',function(req,res,next){
         }
     });
 });
+
+router.post('/:worker_id',function(req,res,next){
+    worker.changePassword(req.params.worker_id,req.body,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    })
+});
 module.exports=router;

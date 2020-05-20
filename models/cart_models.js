@@ -3,7 +3,7 @@ var cart={
     getAllCart:function(callback)
     {
         return db.query('select * from cart_tbl',callback);
-    },
+    },      
     getCartById:function(cart_id,callback)
     {
         return db.query('select * from cart_tbl where cart_id=?',[cart_id],callback);

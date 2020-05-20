@@ -15,4 +15,22 @@ router.get('/:vehicle_assigned_id',function(req,res,next){
     });
 });
 
+
+router.post('/',function(req,res,next){
+    
+    console.log(req.body);
+    
+    vehicle.updateAssignedVehicle(req.body,function(err,rows){                   //Insert
+        if(err)
+        {
+            res.json(err);
+            console.log("err");
+        }
+        if(rows)
+        {
+            res.json(rows);    
+            console.log("rows");
+        }
+    });        
+});
 module.exports=router;
