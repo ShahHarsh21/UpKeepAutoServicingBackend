@@ -78,7 +78,7 @@ var supplier_product_Router = require('./routes/supplier_product_routs');
 
 var leaveRouter = require('./routes/leave_routs');
 var pastLEaveRouter = require('./routes/past_leaves_routs');
-
+var dashboardtrackingRouter = require ('./routes/DashboradTracking_routes');
 var app = express();
 
 // npview engine setup
@@ -131,7 +131,7 @@ app.use('/worker_update',worker_updateRouter);
 app.use('/service',serviceRouter);
 app.use('/deleteAllService',deleteALlServiceRouter);
 app.use('/user_Service',ServiceuserRouter);
-
+app.use('/dashboard',dashboardtrackingRouter);
 
 app.use('/AssignedWorker',assignedWorker);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
