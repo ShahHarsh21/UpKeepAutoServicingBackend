@@ -36,7 +36,6 @@ var deleteallCatRouter =require('./routes/deleteAllCat_routes');
 
 var stockRouter = require('./routes/stock_routes');
 var deleteAllStockRouter = require('./routes/deleteAllStock_routes');
-
 var cartRouter = require('./routes/cart_routes');
 var deleteallCartRouter = require('./routes/deleteAllCart_routes');
 
@@ -54,7 +53,6 @@ var deleteallProRouter = require('./routes/deleteAllPro_routes');
 var deleteallCatRouter =require('./routes/deleteAllCat_routes');
 var deleteallUserRouter = require('./routes/deleteAllUser_routes');
 var deleteallCartRouter = require('./routes/deleteAllCart_routes');
-var deleteAllStockRouter = require('./routes/deleteAllStock_routes');
 var deleteAllOrderDetailsRouter = require('./routes/deleteAllOrderDetails_routes');
 var product_imagRouter=require('./routes/product_img_routs');
 var workerRouter = require('./routes/worker_routes');
