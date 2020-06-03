@@ -46,7 +46,6 @@ var deleteAllOrderDetailsRouter = require('./routes/deleteAllOrderDetails_routes
 
 var vehicle_assignedRouter=require('./routes/vehicle_assigned_routes');
 var vehicle_not_assignedRouter=require('./routes/vehicle_not_assigned_routes');
-var assignedWorker = require('./routes/woker_asssigned_routs');
 
 var serviceRouter=require('./routes/service_routs');
 var assignedWorker = require('./routes/woker_asssigned_routs');
@@ -165,6 +164,7 @@ app.use('/deleteSupplier',deleteAllSupplier_router);
 
 app.use('/leave',leaveRouter);
 app.use('/pastLeave',pastLEaveRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
