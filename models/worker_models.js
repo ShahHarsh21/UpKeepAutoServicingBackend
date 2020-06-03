@@ -61,9 +61,13 @@ var worker={
     {
         return db.query('select worker_image from worker_tbl where worker_id=?',[worker_id],callback);
     },
-    deleteWorker:function(worker_id,callback)
+    // deleteWorker:function(worker_id,callback)
+    // {
+    //     return db.query('delete from worker_tbl where worker_id=?',[worker_id],callback);
+    // }
+    deleteAllWorker:function(item,callback)
     {
-        return db.query('delete from worker_tbl where worker_id=?',[worker_id],callback);
-    }
+        return db.query("delete from worker_tbl where worker_id in (?)",[item],callback);
+    },
 }
 module.exports=worker;

@@ -28,8 +28,9 @@ var stock={
     {
         return db.query('update stock_tbl set quantity=? where stock_id=?',[item.quantity,stock_id],callback);
     },
-    deleteAllstock:function(item,callback)
+    deleteAllStock:function(item,callback)
     {
+            console.log(item);
             return db.query("delete from stock_tbl where stock_id in (?)",[item],callback);
     }
 }
