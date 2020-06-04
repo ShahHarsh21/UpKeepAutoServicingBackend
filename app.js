@@ -36,7 +36,6 @@ var deleteallCatRouter =require('./routes/deleteAllCat_routes');
 
 var stockRouter = require('./routes/stock_routes');
 var deleteAllStockRouter = require('./routes/deleteAllStock_routes');
-
 var cartRouter = require('./routes/cart_routes');
 var deleteallCartRouter = require('./routes/deleteAllCart_routes');
 
@@ -46,7 +45,6 @@ var deleteAllOrderDetailsRouter = require('./routes/deleteAllOrderDetails_routes
 
 var vehicle_assignedRouter=require('./routes/vehicle_assigned_routes');
 var vehicle_not_assignedRouter=require('./routes/vehicle_not_assigned_routes');
-var assignedWorker = require('./routes/woker_asssigned_routs');
 
 var serviceRouter=require('./routes/service_routs');
 var assignedWorker = require('./routes/woker_asssigned_routs');
@@ -54,7 +52,6 @@ var deleteallProRouter = require('./routes/deleteAllPro_routes');
 var deleteallCatRouter =require('./routes/deleteAllCat_routes');
 var deleteallUserRouter = require('./routes/deleteAllUser_routes');
 var deleteallCartRouter = require('./routes/deleteAllCart_routes');
-var deleteAllStockRouter = require('./routes/deleteAllStock_routes');
 var deleteAllOrderDetailsRouter = require('./routes/deleteAllOrderDetails_routes');
 var product_imagRouter=require('./routes/product_img_routs');
 var workerRouter = require('./routes/worker_routes');
@@ -149,7 +146,7 @@ app.use('/worker_update',worker_updateRouter);
 app.use('/service',serviceRouter);
 app.use('/deleteAllService',deleteALlServiceRouter);
 app.use('/user_Service',ServiceuserRouter);
-
+app.use('/dashboard',dashboardtrackingRouter);
 
 app.use('/AssignedWorker',assignedWorker);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
