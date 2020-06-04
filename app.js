@@ -38,6 +38,7 @@ var stockRouter = require('./routes/stock_routes');
 var deleteAllStockRouter = require('./routes/deleteAllStock_routes');
 var cartRouter = require('./routes/cart_routes');
 var deleteallCartRouter = require('./routes/deleteAllCart_routes');
+var dashborardratioRouter = require('./routes/dashborard_routes');
 
 var supplierRouter =  require('./routes/supplier_routes');
 var order_detailsRouter= require('./routes/order_details_routes');
@@ -162,6 +163,7 @@ app.use('/deleteSupplier',deleteAllSupplier_router);
 
 app.use('/leave',leaveRouter);
 app.use('/pastLeave',pastLEaveRouter);
+app.use('/dashboardratio',dashborardratioRouter);
 
 
 // catch 404 and forward to error handler
