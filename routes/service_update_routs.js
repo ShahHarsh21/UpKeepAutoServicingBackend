@@ -41,8 +41,10 @@ router.get('/:service_id',function(req,res,next){
  });
 
  router.put('/:service_id',function(req,res,next){
+     console.log(req.body);
      service.updateService(req.params.service_id,req.body,function(err,rows){
          if(err){
+             console.log('err');
              res.json(err);
          }
          else{

@@ -36,7 +36,7 @@ var service={
     updateStatusRemark(item,callback)
     {
         console.log(item);
-        return db.query('UPDATE vehicle_assigned_tbl v,service_tbl s set v.status=?,v.remark=?,s.remark=? where v.fk_service_id=s.service_id and s.service_id=? and v.vehicle_assigned_id=?',[item.status,item.remark,item.remark,item.service_id,item.vehicle_assigned_id],callback);
+        return db.query('update vehicle_assigned_tbl v,service_tbl s set v.status=?,v.remark=?,s.remark=? where v.fk_service_id=s.service_id and s.service_id=? and v.vehicle_assigned_id=?',[item.status,item.remark,item.remark,item.service_id,item.vehicle_assigned_id],callback);
     },
     deleteService:function(service_id,callback)
     {

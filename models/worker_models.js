@@ -30,7 +30,7 @@ var worker={
     },
     getAssignedWorker(fk_worker_id,callback)
     {
-        return db.query('select s.*,w.worker_id,v.status,v.remark,u.user_name,v.vehicle_assigned_id from vehicle_assigned_tbl v join worker_tbl w on v.fk_worker_id = w.worker_id join service_tbl s on s.service_id = v.fk_service_id join user_tbl u on u.user_id = s.fk_user_id where  v.fk_worker_id=1',[fk_worker_id],callback);
+        return db.query('select s.*,w.worker_id,v.status,v.remark,u.user_name,v.vehicle_assigned_id from vehicle_assigned_tbl v join worker_tbl w on v.fk_worker_id = w.worker_id join service_tbl s on s.service_id = v.fk_service_id join user_tbl u on u.user_id = s.fk_user_id where  v.fk_worker_id=?',[fk_worker_id],callback);
     },  
     AddWorker:function(item,callback)
     {
