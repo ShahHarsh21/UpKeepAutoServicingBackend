@@ -15,7 +15,7 @@ router.get('/',function(req,res,next){
 
 
 router.get('/:order_id',function(req,res,next){
-    order_rou.getMultiplebyOrderId(req.params.order_id,function(err,rows){
+    order_rou.getOrderById(req.params.order_id,function(err,rows){
           if(err)
           {
               res.json(err);

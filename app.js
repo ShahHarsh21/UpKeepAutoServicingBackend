@@ -93,7 +93,8 @@ var UserProductRouter = require('./routes/User/user_product_routs');
 var UserProductOtherRouter = require('./routes/User/user_product_other_routs');
 var UserProductImageRouter = require('./routes/User/user_product_img_routs');
 var UserCategoryRouter = require('./routes/User/user_category_routs');
-
+var dashboardtrackingRouter = require('./routes/DashboradTracking_routes');
+var dashboardorderRouter = require('./routes/dashboardMember_routes');
 var app = express();
 
 // npview engine setup
@@ -147,7 +148,7 @@ app.use('/service',serviceRouter);
 app.use('/deleteAllService',deleteALlServiceRouter);
 app.use('/user_Service',ServiceuserRouter);
 app.use('/dashboard',dashboardtrackingRouter);
-
+app.use('/dashboardorder',dashboardorderRouter);
 app.use('/AssignedWorker',assignedWorker);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
 app.use('/Vehicle_not_assigned',vehicle_not_assignedRouter);
