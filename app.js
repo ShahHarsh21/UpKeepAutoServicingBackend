@@ -38,6 +38,7 @@ var stockRouter = require('./routes/stock_routes');
 var deleteAllStockRouter = require('./routes/deleteAllStock_routes');
 var cartRouter = require('./routes/cart_routes');
 var deleteallCartRouter = require('./routes/deleteAllCart_routes');
+var dashborardratioRouter = require('./routes/dashborard_routes');
 
 var supplierRouter =  require('./routes/supplier_routes');
 var order_detailsRouter= require('./routes/order_details_routes');
@@ -149,7 +150,7 @@ app.use('/service',serviceRouter);
 app.use('/deleteAllService',deleteALlServiceRouter);
 app.use('/user_Service',ServiceuserRouter);
 app.use('/dashboard',dashboardtrackingRouter);
-
+app.use('/dashboardorder',dashboardorderRouter);
 app.use('/AssignedWorker',assignedWorker);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
 app.use('/Vehicle_not_assigned',vehicle_not_assignedRouter);
@@ -182,6 +183,7 @@ app.use('/deleteSupplier',deleteAllSupplier_router);
 
 app.use('/leave',leaveRouter);
 app.use('/pastLeave',pastLEaveRouter);
+app.use('/dashboardratio',dashborardratioRouter);
 
 app.use('/UserOrder',UserOrderRouter);
 app.use('/UserOrderdetails',UserOrderdetailsRouter);
