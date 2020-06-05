@@ -83,6 +83,7 @@ var UserOrderdetailsRouter = require('./routes/user_orderDetails_routs');
 var UserOrderDeleteRouter = require('./routes/user_orderDetails_routs');
 var CartDeleteRouter = require('./routes/CartDelete_routs');
 
+var dashboardtrackingRouter = require('./routes/DashboradTracking_routes');
 //All UserSide Routs...
 
 var UserLoginRouter = require('./routes/User/user_login_routs');
@@ -94,8 +95,8 @@ var UserProductRouter = require('./routes/User/user_product_routs');
 var UserProductOtherRouter = require('./routes/User/user_product_other_routs');
 var UserProductImageRouter = require('./routes/User/user_product_img_routs');
 var UserCategoryRouter = require('./routes/User/user_category_routs');
-var dashboardtrackingRouter = require('./routes/DashboradTracking_routes');
-var dashboardorderRouter = require('./routes/dashboardMember_routes');
+var userProductCategoryRouter = require('./routes/User/user_productCategory_routs');
+
 var app = express();
 
 // npview engine setup
@@ -196,6 +197,7 @@ app.use('/UserProfile',UserProfileRouter);
 
 app.use('/UserProduct',UserProductRouter);
 app.use('/UserProductOther',UserProductOtherRouter);
+app.use('/UserProductCategory',userProductCategoryRouter);
 
 app.use('/CartDetails',CartDetailsRouter);
 app.use('/CartDelete',CartDeleteRouter);
