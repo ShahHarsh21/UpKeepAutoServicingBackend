@@ -150,7 +150,6 @@ app.use('/service',serviceRouter);
 app.use('/deleteAllService',deleteALlServiceRouter);
 app.use('/user_Service',ServiceuserRouter);
 app.use('/dashboard',dashboardtrackingRouter);
-app.use('/dashboardorder',dashboardorderRouter);
 app.use('/AssignedWorker',assignedWorker);
 app.use('/Vehicle_assigned',vehicle_assignedRouter);
 app.use('/Vehicle_not_assigned',vehicle_not_assignedRouter);
