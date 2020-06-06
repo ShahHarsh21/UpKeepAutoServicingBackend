@@ -96,6 +96,7 @@ var UserProductOtherRouter = require('./routes/User/user_product_other_routs');
 var UserProductImageRouter = require('./routes/User/user_product_img_routs');
 var UserCategoryRouter = require('./routes/User/user_category_routs');
 var userProductCategoryRouter = require('./routes/User/user_productCategory_routs');
+var dashboardorderRouter = require('./routes/dashborard_routes');
 
 var app = express();
 

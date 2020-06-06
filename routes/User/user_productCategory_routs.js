@@ -15,8 +15,9 @@ var path=require('path');
 //         }
 //     });
 // });
-router.get('/:category_id',function(req,res,next){
-    product.getAllProductByCategoryId(req.params.category_id,function(err,rows){
+router.get('/:fk_cate_id',function(req,res,next){
+    console.log(req.params.fk_cate_id);
+    product.getAllProductByCategoryId(req.params.fk_cate_id,function(err,rows){
         if(err)
         {
             res.json(err);
