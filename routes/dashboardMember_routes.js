@@ -3,7 +3,7 @@ var router = express.Router();
 var dashrout = require('../models/dashboard_models');
 
 router.get('/:year', function (req, res, next) {
-    dashrout.ordersCust(req.params.year, function (err, rows) {
+    dashrout.getRatioByWorkerId(req.params.year, function (err, rows) {
         console.log(res);
         if (err) {
             console.log("error");
@@ -14,6 +14,6 @@ router.get('/:year', function (req, res, next) {
             res.json(rows);
         }
     });
-});
 
+});
 module.exports = router;
