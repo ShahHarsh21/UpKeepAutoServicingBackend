@@ -3,7 +3,7 @@ var router = express.Router();
 var user_router = require('../models/user_models');
 var worker_router = require('../models/worker_models');
 router.get('/',function(req,res,next){
-    console.log(re.body);
+    (re.body);
     worker_router.getWorkerByEmail(req.body,function(err,rows){
         if(err)
         {

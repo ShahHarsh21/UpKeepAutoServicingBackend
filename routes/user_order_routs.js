@@ -13,7 +13,6 @@ router.get('/',function(req,res,next){
     });
 });
 
-
 router.get('/:order_id',function(req,res,next){
     order_rou.getOrderById(req.params.order_id,function(err,rows){
           if(err)
@@ -29,11 +28,11 @@ router.get('/:order_id',function(req,res,next){
 
 
     router.post('/',function(req,res,next){
-        console.log("inside order add");
+        ("inside order add");
         order_rou.insertOrder(req.body,function(err,rows){
               if(err)
               {
-                console.log(req.body);
+                (req.body);
                   res.json(err);
               }
               else

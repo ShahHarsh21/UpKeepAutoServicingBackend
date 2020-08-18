@@ -6,12 +6,12 @@ router.post('/',function(req,res,next){
     stock.deleteAllStock(req.body,function(err,rows){                   //Insert
         if(err)
         {
-            console.log(err);
+            (err);
             res.json(err);
         }
         if(rows)
         {
-            console.log(rows);
+            (rows);
             res.json(rows);    
         }
     });

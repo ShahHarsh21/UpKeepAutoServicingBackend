@@ -4,13 +4,13 @@ var dashrout = require('../models/dashboard_models');
 
 router.get('/:year', function (req, res, next) {
     dashrout.getRatioByWorkerId(req.params.year, function (err, rows) {
-        console.log(res);
+        (res);
         if (err) {
-            console.log("error");
+            ("error");
             res.json(err);
         }
         else {
-            console.log("rows");
+            ("rows");
             res.json(rows);
         }
     });

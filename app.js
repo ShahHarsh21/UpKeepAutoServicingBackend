@@ -97,7 +97,8 @@ var UserProductImageRouter = require('./routes/User/user_product_img_routs');
 var UserCategoryRouter = require('./routes/User/user_category_routs');
 var userProductCategoryRouter = require('./routes/User/user_productCategory_routs');
 var dashboardorderRouter = require('./routes/dashborard_routes');
-
+var dashboarRouter = require('./routes/Dashboard_second_routes');
+var UserorderDetailsSecondRouter = require('./routes/User/user_order_details_routs')
 var app = express();
 
 // npview engine setup
@@ -207,7 +208,8 @@ app.use('/UserOrderDelete',UserOrderDeleteRouter);
 app.use('/UserProductImage',UserProductImageRouter);
 
 app.use('/UserCategory',UserCategoryRouter);
-
+app.use('/Dashboard',dashboarRouter);
+app.use('/UserDetailsSecondRouter',UserorderDetailsSecondRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

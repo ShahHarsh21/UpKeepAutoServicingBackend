@@ -4,7 +4,7 @@ var worker_router = require('../models/worker_models');
 
 
 router.get('/:email_id',function(req,res,next){
-    console.log(req.params.email_id);
+    (req.params.email_id);
     worker_router.getWorkerByEmailId(req.params.email_id,function(err,rows){
         if(err)
         {

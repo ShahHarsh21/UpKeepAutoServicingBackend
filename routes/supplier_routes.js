@@ -28,16 +28,16 @@ router.get('/:supplier_id',function(req,res,next){
 });
 
  router.post('/',function(req,res,next){
-    console.log(req.body);
+    (req.body);
     supplier.AddSupplier(req.body,function(err,rows){                   //Insert
          if(err)
          {
-             console.log("err");
+             ("err");
              res.json(err);
          }
          if(rows)
          {
-            console.log("rows");
+            ("rows");
              res.json(rows);    
          }
      });
@@ -61,7 +61,7 @@ router.get('/:supplier_id',function(req,res,next){
          }
          else{
              res.json(rows);
-             console.log('rows');
+             ('rows');
          }
      });
  });

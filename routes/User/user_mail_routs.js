@@ -18,7 +18,7 @@ router.post('/',function(req,res,next){
 });
 
 router.get('/:email_id',function(req,res,next){
-    console.log(req.params.email_id);
+    (req.params.email_id);
     demo.getUserByEmailId(req.params.email_id,function(err,rows){
         if(err)
         {

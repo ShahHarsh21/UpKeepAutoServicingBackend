@@ -40,7 +40,7 @@ router.get('/:category_id',function(req,res,next){
      });
  });
  router.delete('/:category_id',function(req,res,next){
-    console.log(req.params.category_id);
+    (req.params.category_id);
     category.deleteCategory(req.params.category_id,function(err,rows){
          if(err)
          {

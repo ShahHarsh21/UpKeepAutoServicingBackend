@@ -30,7 +30,6 @@ var stock={
     },
     deleteAllStock:function(item,callback)
     {
-            console.log(item);
             return db.query("delete from stock_tbl where stock_id in (?)",[item],callback);
     }
 }

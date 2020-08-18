@@ -41,11 +41,11 @@ router.get('/:service_id',function(req,res,next){
  });
 
  router.put('/:service_id',function(req,res,next){
-    console.log(req.params.service_id); 
-    console.log(req.body);
+    (req.params.service_id); 
+    (req.body);
      service.updateStatusRemark(req.params.service_id,req.body,function(err,rows){
          if(err){
-             console.log('err');
+             ('err');
              res.json(err);
          }
          else{

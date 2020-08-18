@@ -3,7 +3,7 @@ var leave={
 
     getAllLeave(callback)
     {
-        return db.query('select * from leave_tbl',callback);
+        return db.query('select l.*,w.* from leave_tbl l,worker_tbl w where l.fk_worker_id = w.worker_id',callback);
     },
     getAllLeaveByWorker(fk_worker_id,callback)
     {   

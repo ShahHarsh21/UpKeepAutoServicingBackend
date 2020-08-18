@@ -31,7 +31,7 @@ router.get('/',function(req,res,next){
 });
 
 router.get('/:product_id',function(req,res,next){
-    console.log(req.params.product_id);
+    (req.params.product_id);
     product_image.getImageById(req.params.product_id,function(err,rows){
         if(err)
         {

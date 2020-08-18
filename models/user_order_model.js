@@ -8,11 +8,11 @@ var orders = {
     getOrderById()
     {
         return db.query('select * from order_tbl where order_id = ?',[order_id],callback);
-    }
-    // deleteOrder: function (order_id, callback) 
-    // {
-    //     return db.query('delete from order_bill_table where order_id=?', [order_id], callback);
-    // },
+    },
+    deleteOrder: function (order_id, callback) 
+    {
+        return db.query('delete from order_bill_table where order_id=?', [order_id], callback);
+    },
     // getAllOrder: function (callback) 
     // {
     //     return db.query('select * from order_bill_table', callback);
@@ -26,8 +26,7 @@ var orders = {
     // },
     // insertOrder: function (item, callback) 
     // {
-    //     console.log("inside model");
-    //     console.log(item);
+    //     ("inside model");
     //     return db.query('insert into `order_bill_table`  values (?,?,?,?,?,?)', [null, item.fk_u_EmailId, item.bill_date, item.order_amt, item.order_payment, item.order_spc_instruction], callback);
     // },
     // getMultiplebyOrderId: function (order_id, callback) 

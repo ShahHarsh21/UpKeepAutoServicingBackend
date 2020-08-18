@@ -17,7 +17,7 @@ router.get('/',function(req,res,next){
 
 router.put('/',function(req,res,next){
      service.updateStatusRemark(req.body,function(err,rows){
-        console.log(req.body);
+        (req.body);
          if(err){
              res.json(err);
          }

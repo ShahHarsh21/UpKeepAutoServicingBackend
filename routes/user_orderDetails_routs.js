@@ -16,8 +16,8 @@ router.get('/',function(req,res,next){
 
 router.post('/',function(req,res,next){
 orDetails.insertOrderDetail(req.body,function(err,rows){
-        console.log(req.body);
-        console.log("details routes");
+        (req.body);
+        ("details routes");
           if(err)
           {
               res.json(err);

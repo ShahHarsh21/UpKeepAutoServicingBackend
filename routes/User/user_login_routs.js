@@ -4,7 +4,7 @@ var user_router = require('../../models/User/user_login_model');
 
 
 router.get('/:email_id',function(req,res,next){
-    console.log(req.params.email_id);
+    (req.params.email_id);
     user_router.getUserByEmailId(req.params.email_id,function(err,rows){
         if(err)
         {

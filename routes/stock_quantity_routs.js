@@ -6,12 +6,12 @@ var stock=require('../models/stock_models'); //Name of the model
     stock.getAllQuantity(function(err,rows){
         if(err)
         {
-            console.log('err');
+            ('err');
             res.json(err);
         }
         if(rows)
         {
-            console.log('rows');
+            ('rows');
             res.json(rows);
         }
     });

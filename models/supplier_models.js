@@ -14,12 +14,11 @@ var supplier={
     },
     AddSupplier:function(item,callback)
     {
-        console.log(item);
         return db.query('insert into supplier_tbl (supplier_name,firm_name,firm_address,contact_no) values(?,?,?,?)',[item.supplier_name,item.firm_name,item.firm_address,item.contact_no],callback);
     },
     deleteSupplier:function(supplier_id,callback)
     {
-        console.log(supplier_id);
+        (supplier_id);
         return db.query('delete from supplier_tbl where supplier_id=?',[supplier_id],callback);
     },
     deleteAllSupplier:function(item,callback)
@@ -28,7 +27,7 @@ var supplier={
     },
     updateSupplier:function(supplier_id,item,callback)
     {
-        console.log(supplier_id,item);
+        (supplier_id,item);
         return db.query('update supplier_tbl set supplier_name=?,firm_name=?,firm_address=?,contact_no=? where supplier_id = ?',[item.supplier_name,item.firm_name,item.firm_address,item.contact_no,supplier_id],callback);
     }
 }

@@ -18,7 +18,7 @@ var vehicle={
     // },
     getVehicleById:function(vehicle_assigned_id,callback)
     {
-        console.log(vehicle_assigned_id);
+        (vehicle_assigned_id);
         return db.query('select v.*,s.*,w.worker_name,w.worker_image,u.user_name from vehicle_assigned_tbl v,service_tbl s,worker_tbl w,user_tbl u where v.fk_service_id = s.service_id and v.fk_worker_id = w.worker_id and s.fk_user_id = u.user_id and v.vehicle_assigned_id=?',[vehicle_assigned_id],callback);
     },
     getAssignedWorkerByVehicleId:function(vehicle_id,callback)
@@ -52,7 +52,6 @@ var vehicle={
     },
     deleteVehicle_assigned:function(vehicle_assigned_id,callback)
     {
-        console.log(vehicle_assigned_id);
         return db.query('delete from vehicle_assigned_tbl where vehicle_assigned_id=?',[vehicle_assigned_id],callback);
     },
     deleteAllVehicle_assigned:function(item,callback)

@@ -4,11 +4,11 @@ var dashroutTracking = require('../models/dashboard_models');
 router.get('/', function (req, res, next) {
     dashroutTracking.trackStatus(function (err, rows) {
         if (err) {
-            console.log('err');
+            ('err');
             res.json(err);
         }
         else {
-            console.log('rows');
+            ('rows');
             res.json(rows);
         }
     });

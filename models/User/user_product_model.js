@@ -10,7 +10,7 @@ var product={
      },
      getAllProductByCategoryId:function(fk_cate_id,callback)
      {  
-         console.log(fk_cate_id);
+         (fk_cate_id);
         return db.query('select * from product_tbl where fk_cat_id = ?',[fk_cate_id],callback);
      },
 }
