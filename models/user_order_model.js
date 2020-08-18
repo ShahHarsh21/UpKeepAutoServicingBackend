@@ -8,11 +8,11 @@ var orders = {
     getOrderById()
     {
         return db.query('select * from order_tbl where order_id = ?',[order_id],callback);
-    }
-    // deleteOrder: function (order_id, callback) 
-    // {
-    //     return db.query('delete from order_bill_table where order_id=?', [order_id], callback);
-    // },
+    },
+    deleteOrder: function (order_id, callback) 
+    {
+        return db.query('delete from order_bill_table where order_id=?', [order_id], callback);
+    },
     // getAllOrder: function (callback) 
     // {
     //     return db.query('select * from order_bill_table', callback);

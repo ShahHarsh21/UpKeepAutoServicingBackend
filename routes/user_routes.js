@@ -29,7 +29,8 @@ router.get('/:user_id',function(req,res,next){
 
  router.post('/',function(req,res,next){
      user.AddUser(req.body,function(err,rows){                   //Insert
-         if(err)
+        console.log(req.body) 
+        if(err)
          {
             res.json(err);
          }

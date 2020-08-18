@@ -19,11 +19,13 @@ router.get('/:email_id',function(req,res,next){
 
 
 router.post('/',function(req,res,next){
+    console.log(req.body)
     user_router.login(req.body,function(err,rows){
         if(err){
             res.json(err);
         }
         else{
+            console.log("rows")
             res.json(rows);
         }
     })

@@ -32,7 +32,8 @@ var vehicle={
     {
         var arr1=[];
         if(item != null) {
-            for (let i = 0; i < item.selectedVehicleArr.length; i++) {
+            for (let i = 0; i < item.selectedVehicleArr.length; i++) 
+            {
                 const Service_Id = item.selectedVehicleArr[i];
                 const Worker_Id = item.selectedWorkerID;
                 const Status = 'Assigned';

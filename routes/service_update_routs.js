@@ -48,7 +48,9 @@ router.get('/:service_id',function(req,res,next){
              console.log('err');
              res.json(err);
          }
-         else{
+         else
+         {
+             console.log('rows');
              res.json(rows);
          }
      });
