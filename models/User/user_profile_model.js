@@ -12,9 +12,9 @@ var user={
     {
         return db.query('select * from user_tbl where user_id=?',[user_id],callback);
     },
-    
     AddUser:function(item,callback)
     {
+        console.log(item)
         return db.query('insert into user_tbl (email_id, password,user_name,mobile_no,address,date_of_birth) values(?,?,?,?,?,?)',[item.email_id,item.password,item.user_name,item.mobile_no,item.address,item.date_of_birth],callback);
     },
     updateUser:function(user_id,item,callback)

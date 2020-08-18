@@ -12,6 +12,10 @@ var user={
     {
         return db.query('select s.vehicle_no,u.*,v.status from user_tbl u,service_tbl s,vehicle_assigned_tbl v where u.user_id=s.fk_user_id and s.service_id = v.fk_service_id and u.user_id = ?',[user_id],callback);
     },
+    getUserByEmail(email_id,callback)
+    {
+        return db.query('select * from user_tbl where email_id = ?',[email_id],callback);
+    },
     getUserById:function(user_id,callback)
     {
         return db.query('select * from user_tbl where user_id=?',[user_id],callback);
@@ -19,6 +23,7 @@ var user={
     
     AddUser:function(item,callback)
     {
+        console.log(item)
         return db.query('insert into user_tbl (email_id, password,user_name,mobile_no,address,date_of_birth) values(?,?,?,?,?,?)',[item.email_id,item.password,item.user_name,item.mobile_no,item.address,item.date_of_birth],callback);
     },
     deleteUser:function(user_id,callback)
